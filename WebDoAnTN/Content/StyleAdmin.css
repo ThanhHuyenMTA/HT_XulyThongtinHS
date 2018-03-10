@@ -1,0 +1,168 @@
+﻿hr{
+    border:1px solid #585757;
+}
+.function{
+    font-weight:bold;
+    font-size:14px;
+}
+.cmt a{
+    font-size:16px;
+    font-weight:bold;
+    margin-left:50%;
+}
+.cmt img{
+    width:340px;
+    height:230px;
+    
+}
+#form_GKS #DanToc {
+    width:45%;
+}
+#form_GKS #QuocTich {
+    width:45%;
+    margin-left:55%;
+    margin-top:-6%;
+}
+#form_GKS #forQuocTich{
+    margin-left:46%;
+}
+
+#form_GKS #DanTocMe {
+    width:45%;
+}
+#form_GKS #QuocTichMe {
+    width:38%;
+    margin-left:52%;
+    margin-top:-6%;
+}
+#form_GKS #forQuocTichMe{
+    margin-left:40%;
+}
+#form_GKS #DanTocBo {
+    width:45%;
+}
+#form_GKS #QuocTichBo {
+    width:38%;
+    margin-left:52%;
+    margin-top:-6%;
+}
+#form_GKS #forQuocTichBo{
+    margin-left:40%;
+}
+
+#form_BTN #forDanToc
+{
+    margin-left:50%;
+}
+#form_BTN #DanToc{
+    width:45%;
+    margin-top:-3%;
+    margin-left:55%;
+}
+#form_BTN #GioiTinh{
+    width:45%;
+}
+#form_BTN #forSovaoSoCapBang{
+    margin-left:51%;
+}
+#form_BTN #SovaoSoCapBang{
+    width:45%;
+    margin-top:-3%;
+    margin-left:55%;
+}
+#form_BTN #SoHieu{
+    width:45%;
+}
+
+#form_HB #forGioiTinh{
+    margin-left:46%;
+}
+#form_HB #HoTen{
+    width:45%;
+}
+#form_HB #GioiTinh{
+    width:45%;
+    margin-left:55%;
+    margin-top:-7%;
+}
+
+#form_HB #forNgheNghiepBo{
+    margin-left:42%;
+}
+#form_HB #HoTenBo{
+    width:45%;
+}
+#form_HB #NgheNghiepBo{
+    width:45%;
+    margin-left:55%;
+    margin-top:-7%;
+}
+#form_HB #forNgheNghiepMe{
+    margin-left:41%;
+}
+#form_HB #HoTenMe{
+    width:45%;
+}
+#form_HB #NgheNghiepMe{
+    width:45%;
+    margin-left:55%;
+    margin-top:-7%;
+}
+#form_HB #forNgheNghiepNGH{
+    margin-left:36%;
+}
+#form_HB #NguoiGiamHo{
+    width:45%;
+}
+#form_HB #NgheNghiepNGH{
+    width:45%;
+    margin-left:55%;
+    margin-top:-7%;
+}
+
+#form_HB #forNgayLap{
+    margin-left:45%;
+}
+#form_HB #DanToc{
+    width:45%;
+}
+#form_HB #NgayLap{
+    width:45%;
+    margin-left:55%;
+    margin-top:-7%;
+}
+
+#form_NH #forTenLop{
+    margin-left:18%;
+}
+#form_NH #forTenTruong{
+    margin-left:25%;
+}
+
+#form_NH #ThoiGian{
+    width:20%;
+
+}
+#form_NH #TenLop{
+    width:25%;
+    margin-left:23%;
+    margin-top:-3%;
+}
+
+#form_NH #TenTruong{
+    width:43%;
+    margin-left:52%;
+    margin-top:-3%;
+}
+#table_mon th{
+    text-align:center;
+    font-weight:bold;
+}
+.nhapdiem .col-lg-7{
+    margin-left:-31px;
+}
+#table_mon input{
+    height:20px;
+   padding-left: 43%;
+    width: 217px;
+}

@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="XulyHosoModelStoreContainer" CdmEntityContainer="XulyHosoEntities">
+    <EntitySetMapping Name="BANGTOTNGHIEPs">
+      <EntityTypeMapping TypeName="XulyHosoModel.BANGTOTNGHIEP">
+        <MappingFragment StoreEntitySet="BANGTOTNGHIEP">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+          <ScalarProperty Name="KhoaThi" ColumnName="KhoaThi" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="SoHieu" ColumnName="SoHieu" />
+          <ScalarProperty Name="SovaoSoCapBang" ColumnName="SovaoSoCapBang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BAOCAOTHONGKEs">
+      <EntityTypeMapping TypeName="XulyHosoModel.BAOCAOTHONGKE">
+        <MappingFragment StoreEntitySet="BAOCAOTHONGKE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ChuThich" ColumnName="ChuThich" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMTs">
+      <EntityTypeMapping TypeName="XulyHosoModel.CMT">
+        <MappingFragment StoreEntitySet="CMT">
+          <ScalarProperty Name="SoCMT" ColumnName="SoCMT" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="TenGoiKhac" ColumnName="TenGoiKhac" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="NoiThuongTru" ColumnName="NoiThuongTru" />
+          <ScalarProperty Name="NgayCap" ColumnName="NgayCap" />
+          <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CT_BCTK">
+      <EntityTypeMapping TypeName="XulyHosoModel.CT_BCTK">
+        <MappingFragment StoreEntitySet="CT_BCTK">
+          <ScalarProperty Name="id_HD" ColumnName="id_HD" />
+          <ScalarProperty Name="id_BCTK" ColumnName="id_BCTK" />
+          <ScalarProperty Name="HinhThuc" ColumnName="HinhThuc" />
+          <ScalarProperty Name="ChuThich" ColumnName="ChuThich" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CT_LOTRINH">
+      <EntityTypeMapping TypeName="XulyHosoModel.CT_LOTRINH">
+        <MappingFragment StoreEntitySet="CT_LOTRINH">
+          <ScalarProperty Name="id_HSHS" ColumnName="id_HSHS" />
+          <ScalarProperty Name="id_LOTRINH" ColumnName="id_LOTRINH" />
+          <ScalarProperty Name="TGBatDau" ColumnName="TGBatDau" />
+          <ScalarProperty Name="TGKetThuc" ColumnName="TGKetThuc" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="ChuThich" ColumnName="ChuThich" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIAYCHUNGTHUCs">
+      <EntityTypeMapping TypeName="XulyHosoModel.GIAYCHUNGTHUC">
+        <MappingFragment StoreEntitySet="GIAYCHUNGTHUC">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="id_HSHS" ColumnName="id_HSHS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIAYKHAISINHs">
+      <EntityTypeMapping TypeName="XulyHosoModel.GIAYKHAISINH">
+        <MappingFragment StoreEntitySet="GIAYKHAISINH">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+          <ScalarProperty Name="QuocTich" ColumnName="QuocTich" />
+          <ScalarProperty Name="HoTenMe" ColumnName="HoTenMe" />
+          <ScalarProperty Name="NsMe" ColumnName="NsMe" />
+          <ScalarProperty Name="DanTocMe" ColumnName="DanTocMe" />
+          <ScalarProperty Name="QuocTichMe" ColumnName="QuocTichMe" />
+          <ScalarProperty Name="NoiCuTruMe" ColumnName="NoiCuTruMe" />
+          <ScalarProperty Name="HoTenBo" ColumnName="HoTenBo" />
+          <ScalarProperty Name="NsBo" ColumnName="NsBo" />
+          <ScalarProperty Name="DanTocBo" ColumnName="DanTocBo" />
+          <ScalarProperty Name="QuocTichBo" ColumnName="QuocTichBo" />
+          <ScalarProperty Name="NoiCuTruBo" ColumnName="NoiCuTruBo" />
+          <ScalarProperty Name="NoiDangKy" ColumnName="NoiDangKy" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOCBAs">
+      <EntityTypeMapping TypeName="XulyHosoModel.HOCBA">
+        <MappingFragment StoreEntitySet="HOCBA">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+          <ScalarProperty Name="NoiSongHienTai" ColumnName="NoiSongHienTai" />
+          <ScalarProperty Name="HoTenBo" ColumnName="HoTenBo" />
+          <ScalarProperty Name="NgheNghiepBo" ColumnName="NgheNghiepBo" />
+          <ScalarProperty Name="HoTenMe" ColumnName="HoTenMe" />
+          <ScalarProperty Name="NgheNghiepMe" ColumnName="NgheNghiepMe" />
+          <ScalarProperty Name="NguoiGiamHo" ColumnName="NguoiGiamHo" />
+          <ScalarProperty Name="NgheNghiepNGH" ColumnName="NgheNghiepNGH" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOPDONGs">
+      <EntityTypeMapping TypeName="XulyHosoModel.HOPDONG">
+        <MappingFragment StoreEntitySet="HOPDONG">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="NgayKy" ColumnName="NgayKy" />
+          <ScalarProperty Name="HanHopDong" ColumnName="HanHopDong" />
+          <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="NguoiLap" ColumnName="NguoiLap" />
+          <ScalarProperty Name="id_HSHS" ColumnName="id_HSHS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOSOHS">
+      <EntityTypeMapping TypeName="XulyHosoModel.HOSOH">
+        <MappingFragment StoreEntitySet="HOSOHS">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="SoCMT_NGH" ColumnName="SoCMT_NGH" />
+          <ScalarProperty Name="id_HS" ColumnName="id_HS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KIHOCs">
+      <EntityTypeMapping TypeName="XulyHosoModel.KIHOC">
+        <MappingFragment StoreEntitySet="KIHOC">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TenKiHoc" ColumnName="TenKiHoc" />
+          <ScalarProperty Name="id_NAMHOC" ColumnName="id_NAMHOC" />
+          <ScalarProperty Name="Toan" ColumnName="Toan" />
+          <ScalarProperty Name="Ly" ColumnName="Ly" />
+          <ScalarProperty Name="Hoa" ColumnName="Hoa" />
+          <ScalarProperty Name="Sinh" ColumnName="Sinh" />
+          <ScalarProperty Name="Tin" ColumnName="Tin" />
+          <ScalarProperty Name="Van" ColumnName="Van" />
+          <ScalarProperty Name="Su" ColumnName="Su" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="NgoaiNgu" ColumnName="NgoaiNgu" />
+          <ScalarProperty Name="CongNghe" ColumnName="CongNghe" />
+          <ScalarProperty Name="QuocPhongAnNinh" ColumnName="QuocPhongAnNinh" />
+          <ScalarProperty Name="TheDuc" ColumnName="TheDuc" />
+          <ScalarProperty Name="TuChon" ColumnName="TuChon" />
+          <ScalarProperty Name="GiaoDucCongDan" ColumnName="GiaoDucCongDan" />
+          <ScalarProperty Name="DiemTrungBinh" ColumnName="DiemTrungBinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOTRINHs">
+      <EntityTypeMapping TypeName="XulyHosoModel.LOTRINH">
+        <MappingFragment StoreEntitySet="LOTRINH">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TenLoTrinh" ColumnName="TenLoTrinh" />
+          <ScalarProperty Name="TGBatDau" ColumnName="TGBatDau" />
+          <ScalarProperty Name="TGKetThuc" ColumnName="TGKetThuc" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NAMHOCs">
+      <EntityTypeMapping TypeName="XulyHosoModel.NAMHOC">
+        <MappingFragment StoreEntitySet="NAMHOC">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+          <ScalarProperty Name="TenTruong" ColumnName="TenTruong" />
+          <ScalarProperty Name="id_HB" ColumnName="id_HB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NGUOIGIAMHOes">
+      <EntityTypeMapping TypeName="XulyHosoModel.NGUOIGIAMHO">
+        <MappingFragment StoreEntitySet="NGUOIGIAMHO">
+          <ScalarProperty Name="SoCMT" ColumnName="SoCMT" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="TenGoiKhac" ColumnName="TenGoiKhac" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="NoiThuongTru" ColumnName="NoiThuongTru" />
+          <ScalarProperty Name="NoiCap" ColumnName="NoiCap" />
+          <ScalarProperty Name="NgayCap" ColumnName="NgayCap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="XulyHosoModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="id_Quyen" ColumnName="id_Quyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QUANTRIs">
+      <EntityTypeMapping TypeName="XulyHosoModel.QUANTRI">
+        <MappingFragment StoreEntitySet="QUANTRI">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QUYENs">
+      <EntityTypeMapping TypeName="XulyHosoModel.QUYEN">
+        <MappingFragment StoreEntitySet="QUYEN">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="XulyHosoModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOCSINHs">
+      <EntityTypeMapping TypeName="XulyHosoModel.HOCSINH">
+        <MappingFragment StoreEntitySet="HOCSINH">
+          <ScalarProperty Name="id_HB" ColumnName="id_HB" />
+          <ScalarProperty Name="id_BTN" ColumnName="id_BTN" />
+          <ScalarProperty Name="id_GKS" ColumnName="id_GKS" />
+          <ScalarProperty Name="anh" ColumnName="anh" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="SoCMT" ColumnName="SoCMT" />
+          <ScalarProperty Name="TenHS" ColumnName="TenHS" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

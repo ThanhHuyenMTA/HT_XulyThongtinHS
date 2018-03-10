@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "CMT";
+    Layout = "~/Views/Shares/_Layout.cshtml";
+}
+<link href="~/Content/css/Cmt.css" rel="stylesheet" />
+<h3>
+    <a href="@Url.Action("Index","Quanlyhocsinh")"> Come back </a>
+    <i class="fa fa-chevron-left"></i> Thông tin CMT
+</h3>
+<hr />
+
+<div class="container cmt">
+    <div class="row">
+        <div class="col-sm-4 ">
+            <img src="~/Content/img/CMT_1.jpg"/><br />
+            <a href="#" id="1" onclick="LoaiCMT(1,@Session["hocsinh"])">Loại 1</a>
+        </div>
+        <div class="col-sm-4">
+            <img src="~/Content/img/CMT_2.jpg"/><br />
+            <a href="#" id="2" onclick="LoaiCMT(2,@Session["hocsinh"])">Loại 2</a>
+        </div>
+        <div class="col-sm-4">
+            <img src="~/Content/img/CMT_3.jpg"/><br />
+            <a href="#" id="3" onclick="LoaiCMT(3,@Session["hocsinh"])">Loại 3</a>
+        </div>
+
+    </div>
+</div>
+<br />
+<div class="loadCMT">
+    
+</div>
+<script type="text/javascript">
+    function LoaiCMT(type,tenhocsinh)
+    {
+        debugger;
+        //alert(type);
+        $.ajax({
+            type: "GET",
+            url: "/Quanlyhocsinh/LoadFormCMT",
+            dataType: "json",
+            data: "",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                var row = '';
+                row += '<form method="post" class="form-group" id="fm_cmt">';
+                row += ' <div class="container formCmt">';
+                row += '  <div class="row">';                                                  
+                row += ' <div class="col-lg-5">';
+                row += '<label for="SoCMT">Số CMT</label>';
+                row += '<input type="text" name="SoCMT" id="SoCMT" class="form-control form-control-sm" />';
+
+                row += '<label for="HoTen">Họ tên</label>';
+                row += '<input type="text" name="HoTen" id="HoTen" class="form-control form-control-sm" value ='+tenhocsinh+'/>';
+                if (type == 2 || type == 3) {
+                    row += '<label for="TenGoiKhac">Tên gọi khác</label>';
+                    row += '<input type="text" name="TenGoiKhac" id="TenGoiKhac" class="form-control form-control-sm" />';
+                }
+                row += '<label for="NgaySinh">Ngày sinh</label>';
+                row += '<input type="datetime" name="NgaySinh" id="NgaySinh" class="form-control form-control-sm" />';                
+
+                row += '<label for="QueQuan">Quê quán</label>';
+                row += '<input type="text" name="QueQuan" id="QueQuan" class="form-control form-control-sm" />';
+                row += '<label for="NoiThuongTru">Nơi thường trú</label>';
+                row += '<input type="text" name="NoiThuongTru" id="NoiThuongTru" class="form-control form-control-sm" />';
+                row += '</div>';
+
+                row += ' <div class="col-lg-5">';
+                if (type == 1) {
+                    row += '<label  for="TonGiao">Tôn Giáo</label>'; row += '<label id="forDanToc"  for="DanToc">Dân tộc</label>';
+                    row += '<input type="text" name="TonGiao" id="TonGiao" class="form-control form-control-sm"/>';
+                    row += '<input type="text" name="DanToc" id="DanToc" class="form-control form-control-sm"/>';
+
+                }
+                if (type == 2) {
+                    row += '<input checked="checked" id="Nam" name="GioiTinh" type="radio" value="Nam" /><span>Nam</span>';
+                    row += '<input checked="checked" id="Nu" name="GioiTinh" type="radio" value="Nữ" /><span>Nam</span> <br/><br/><br/>';
+
+
+                    row += '<label  for="GioiTinh">Giới tính</label>'; row += '<label id="forDanToc" for="DanToc">Dân tộc</label>';
+                    row += '<input type="text" name="GioiTinh" id="GioiTinh" class="form-control form-control-sm" />';
+                    row += '<input type="text" name="DanToc" id="DanToc" class="form-control form-control-sm" />';
+                }
+                if (type == 3) {
+                    row += '<label for="GioiTinh">Giới tính</label>'; row += '<label id="forQuocTich" for="QuocTich">Quốc tịch</label>';
+                    row += '<input type="text" name="GioiTinh" id="GioiTinh" class="form-control form-control-sm" />';                    
+                    row += '<input type="text" name="QuocTich" id="QuocTich" class="form-control form-control-sm" />';
+                }
+                if (type == 2 || type == 3) {
+                    row += '<label for="GiaTriDen">Giá trị đến</label>';
+                    row += '<input type="datetime" name="GiaTriDen" id="GiaTriDen" class="form-control form-control-sm" />';
+                }
+                
+                                               
+                row += '<label for="DauVetRieng">Dấu vết riêng</label>';
+                row += '<input type="text" name="DauVetRieng" id="DauVetRieng" class="form-control form-control-sm" />';
+                row += '<label for="NgayCap">Ngày cấp</label>';
+                row += '<input type="datetime" name="NgayCap" id="NgayCap" class="form-control form-control-sm" />';
+                row += '<label for="NoiCap">Nơi cấp</label>';
+                row += '<input type="text" name="NoiCap" id="NoiCap" class="form-control form-control-sm" />';                
+                row += '</div>';
+                row += '  </div>';
+                row += '  </div>';
+
+                row += '<input type="button" onclick="SaveCMT('+type+')" value="Lưu thông tin" class="btn btn-sm btn-primary" />';
+                row += '</form>';
+                $('.loadCMT').html(row);
+
+            },
+            error: function (err) {
+            alert("Error: " + err.responseText);
+        }
+        });
+
+
+
+    }
+
+    function SaveCMT(type)
+    {
+        var cmt = {
+            SoCMT: $('#SoCMT').val(),
+            HoTen: $('#HoTen').val(),
+            TenGoiKhac: $('#TenGoiKhac').val(),
+            NgaySinh: $('#NgaySinh').val(),
+            GioiTinh: $('#GioiTinh').val(),
+            QuocTich: $('#QuocTich').val(),
+            QueQuan: $('#QueQuan').val(),
+            NoiThuongTru: $('#NoiThuongTru').val(),
+            GiaTriDen: $('#GiaTriDen').val(),
+            DanToc: $('#DanToc').val(),
+            TonGiao: $('#TonGiao').val(),
+            DauVetRieng: $('#DauVetRieng').val(),
+            NgayCap: $('#NgayCap').val(),
+            NoiCap: $('#NoiCap').val(),
+            Type: type
+        }
+        debugger;
+        $.ajax({
+            type: "POST",
+            url: "/Quanlyhocsinh/themCMT",
+            dataType: "json",
+            data: JSON.stringify(cmt),
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data);
+                $(".formCmt").css("display", "none");
+            },
+            error: function (err) {
+                alert("Error: " + err.responseText);
+            }
+        });
+    }
+
+</script>
+
+
+
+

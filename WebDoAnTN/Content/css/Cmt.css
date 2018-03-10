@@ -1,0 +1,23 @@
+﻿.formCmt #forDanToc{
+    margin-left:36%;
+}
+.formCmt #GioiTinh{
+    width:40%;
+}
+.formCmt #DanToc {
+    width: 40%;
+    margin-top: -35px;
+    margin-left: 45%;
+}
+
+.formCmt #forQuocTich{
+    margin-left:36%;
+}
+.formCmt #QuocTich {
+    width: 40%;
+    margin-top: -35px;
+    margin-left: 45%;
+}
+.formCmt #TonGiao{
+    width:40%;
+}

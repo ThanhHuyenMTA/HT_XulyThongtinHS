@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="XulyHosoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BANGTOTNGHIEP">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="NoiSinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+    <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
+    <Property Name="KhoaThi" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayLap" Type="datetime" />
+    <Property Name="SoHieu" Type="nvarchar" MaxLength="20" />
+    <Property Name="SovaoSoCapBang" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="BAOCAOTHONGKE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayLap" Type="datetime" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="400" />
+    <Property Name="ChuThich" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="CMT">
+    <Key>
+      <PropertyRef Name="SoCMT" />
+    </Key>
+    <Property Name="SoCMT" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenGoiKhac" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="200" />
+    <Property Name="NoiThuongTru" Type="nvarchar" MaxLength="200" />
+    <Property Name="NgayCap" Type="datetime" />
+    <Property Name="NoiCap" Type="nvarchar" MaxLength="200" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="CT_BCTK">
+    <Key>
+      <PropertyRef Name="id_HD" />
+      <PropertyRef Name="id_BCTK" />
+    </Key>
+    <Property Name="id_HD" Type="int" Nullable="false" />
+    <Property Name="id_BCTK" Type="int" Nullable="false" />
+    <Property Name="HinhThuc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChuThich" Type="nvarchar" MaxLength="400" />
+    <Property Name="NgayLap" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CT_LOTRINH">
+    <Key>
+      <PropertyRef Name="id_HSHS" />
+      <PropertyRef Name="id_LOTRINH" />
+    </Key>
+    <Property Name="id_HSHS" Type="int" Nullable="false" />
+    <Property Name="id_LOTRINH" Type="int" Nullable="false" />
+    <Property Name="TGBatDau" Type="datetime" />
+    <Property Name="TGKetThuc" Type="datetime" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="100" />
+    <Property Name="ChuThich" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="GIAYCHUNGTHUC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenGiay" Type="nvarchar" MaxLength="300" />
+    <Property Name="Anh" Type="text" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="400" />
+    <Property Name="id_HSHS" Type="int" />
+  </EntityType>
+  <EntityType Name="GIAYKHAISINH">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="NoiSinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="200" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+    <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuocTich" Type="nvarchar" MaxLength="50" />
+    <Property Name="HoTenMe" Type="nvarchar" MaxLength="50" />
+    <Property Name="NsMe" Type="nvarchar" MaxLength="4" />
+    <Property Name="DanTocMe" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuocTichMe" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoiCuTruMe" Type="nvarchar" MaxLength="200" />
+    <Property Name="HoTenBo" Type="nvarchar" MaxLength="50" />
+    <Property Name="NsBo" Type="nvarchar" MaxLength="4" />
+    <Property Name="DanTocBo" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuocTichBo" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoiCuTruBo" Type="nvarchar" MaxLength="200" />
+    <Property Name="NoiDangKy" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayLap" Type="datetime" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="HOCBA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="NoiSinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+    <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoiSongHienTai" Type="nvarchar" MaxLength="200" />
+    <Property Name="HoTenBo" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgheNghiepBo" Type="nvarchar" MaxLength="50" />
+    <Property Name="HoTenMe" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgheNghiepMe" Type="nvarchar" MaxLength="50" />
+    <Property Name="NguoiGiamHo" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgheNghiepNGH" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayLap" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HOCSINH">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenHS" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoCMT" Type="varchar" MaxLength="20" />
+    <Property Name="sdt" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="text" />
+    <Property Name="anh" Type="text" />
+    <Property Name="id_GKS" Type="int" />
+    <Property Name="id_BTN" Type="int" />
+    <Property Name="id_HB" Type="int" />
+  </EntityType>
+  <EntityType Name="HOPDONG">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayKy" Type="datetime" />
+    <Property Name="HanHopDong" Type="datetime" />
+    <Property Name="ThanhToan" Type="nvarchar" MaxLength="100" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="400" />
+    <Property Name="NguoiLap" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_HSHS" Type="int" />
+  </EntityType>
+  <EntityType Name="HOSOHS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SoCMT_NGH" Type="varchar" MaxLength="20" />
+    <Property Name="id_HS" Type="int" />
+  </EntityType>
+  <EntityType Name="KIHOC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKiHoc" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_NAMHOC" Type="int" />
+    <Property Name="Toan" Type="float" />
+    <Property Name="Ly" Type="float" />
+    <Property Name="Hoa" Type="float" />
+    <Property Name="Sinh" Type="float" />
+    <Property Name="Tin" Type="float" />
+    <Property Name="Van" Type="float" />
+    <Property Name="Su" Type="float" />
+    <Property Name="Dia" Type="float" />
+    <Property Name="NgoaiNgu" Type="float" />
+    <Property Name="CongNghe" Type="float" />
+    <Property Name="QuocPhongAnNinh" Type="float" />
+    <Property Name="TheDuc" Type="nvarchar" MaxLength="5" />
+    <Property Name="TuChon" Type="float" />
+    <Property Name="GiaoDucCongDan" Type="float" />
+    <Property Name="DiemTrungBinh" Type="float" />
+  </EntityType>
+  <EntityType Name="LOTRINH">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoTrinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="TGBatDau" Type="datetime" />
+    <Property Name="TGKetThuc" Type="datetime" />
+    <Property Name="Mota" Type="nvarchar" MaxLength="400" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NAMHOC">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ThoiGian" Type="nvarchar" MaxLength="20" />
+    <Property Name="TenLop" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenTruong" Type="nvarchar" MaxLength="100" />
+    <Property Name="id_HB" Type="int" />
+  </EntityType>
+  <EntityType Name="NGUOIGIAMHO">
+    <Key>
+      <PropertyRef Name="SoCMT" />
+    </Key>
+    <Property Name="SoCMT" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenGoiKhac" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="200" />
+    <Property Name="NoiThuongTru" Type="nvarchar" MaxLength="200" />
+    <Property Name="NoiCap" Type="nvarchar" MaxLength="200" />
+    <Property Name="NgayCap" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
+    <Property Name="SoDT" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="text" />
+    <Property Name="id_Quyen" Type="int" />
+  </EntityType>
+  <EntityType Name="QUANTRI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="text" />
+  </EntityType>
+  <EntityType Name="QUYEN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenQuyen" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_CT_BCTK_BAOCAOTHONGKE">
+    <End Role="BAOCAOTHONGKE" Type="Self.BAOCAOTHONGKE" Multiplicity="1" />
+    <End Role="CT_BCTK" Type="Self.CT_BCTK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BAOCAOTHONGKE">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CT_BCTK">
+        <PropertyRef Name="id_BCTK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_BCTK_HOPDONG">
+    <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="1" />
+    <End Role="CT_BCTK" Type="Self.CT_BCTK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOPDONG">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CT_BCTK">
+        <PropertyRef Name="id_HD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_LOTRINH_HOSOHS">
+    <End Role="HOSOHS" Type="Self.HOSOHS" Multiplicity="1" />
+    <End Role="CT_LOTRINH" Type="Self.CT_LOTRINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOSOHS">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CT_LOTRINH">
+        <PropertyRef Name="id_HSHS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_LOTRINH_LOTRINH">
+    <End Role="LOTRINH" Type="Self.LOTRINH" Multiplicity="1" />
+    <End Role="CT_LOTRINH" Type="Self.CT_LOTRINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOTRINH">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CT_LOTRINH">
+        <PropertyRef Name="id_LOTRINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GIAYCHUNGTHUC_HOSOHS">
+    <End Role="HOSOHS" Type="Self.HOSOHS" Multiplicity="0..1" />
+    <End Role="GIAYCHUNGTHUC" Type="Self.GIAYCHUNGTHUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOSOHS">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="GIAYCHUNGTHUC">
+        <PropertyRef Name="id_HSHS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOCSINH_BANGTOTNGHIEP">
+    <End Role="BANGTOTNGHIEP" Type="Self.BANGTOTNGHIEP" Multiplicity="0..1" />
+    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANGTOTNGHIEP">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HOCSINH">
+        <PropertyRef Name="id_BTN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOCSINH_CMT">
+    <End Role="CMT" Type="Self.CMT" Multiplicity="0..1" />
+    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CMT">
+        <PropertyRef Name="SoCMT" />
+      </Principal>
+      <Dependent Role="HOCSINH">
+        <PropertyRef Name="SoCMT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOCSINH_GIAYKHAISINH">
+    <End Role="GIAYKHAISINH" Type="Self.GIAYKHAISINH" Multiplicity="0..1" />
+    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GIAYKHAISINH">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HOCSINH">
+        <PropertyRef Name="id_GKS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOPDONG_HOSOHS">
+    <End Role="HOSOHS" Type="Self.HOSOHS" Multiplicity="0..1" />
+    <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOSOHS">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HOPDONG">
+        <PropertyRef Name="id_HSHS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOSOHS_HOCSINH">
+    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="0..1" />
+    <End Role="HOSOHS" Type="Self.HOSOHS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCSINH">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HOSOHS">
+        <PropertyRef Name="id_HS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOSOHS_NGUOIGIAMHO">
+    <End Role="NGUOIGIAMHO" Type="Self.NGUOIGIAMHO" Multiplicity="0..1" />
+    <End Role="HOSOHS" Type="Self.HOSOHS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIGIAMHO">
+        <PropertyRef Name="SoCMT" />
+      </Principal>
+      <Dependent Role="HOSOHS">
+        <PropertyRef Name="SoCMT_NGH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KIHOC_NAMHOC">
+    <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="0..1" />
+    <End Role="KIHOC" Type="Self.KIHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NAMHOC">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="KIHOC">
+        <PropertyRef Name="id_NAMHOC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NAMHOC_HOCBA">
+    <End Role="HOCBA" Type="Self.HOCBA" Multiplicity="0..1" />
+    <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCBA">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="NAMHOC">
+        <PropertyRef Name="id_HB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHANVIEN_QUYEN">
+    <End Role="QUYEN" Type="Self.QUYEN" Multiplicity="0..1" />
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUYEN">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="NHANVIEN">
+        <PropertyRef Name="id_Quyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="XulyHosoModelStoreContainer">
+    <EntitySet Name="BANGTOTNGHIEP" EntityType="Self.BANGTOTNGHIEP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BAOCAOTHONGKE" EntityType="Self.BAOCAOTHONGKE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMT" EntityType="Self.CMT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CT_BCTK" EntityType="Self.CT_BCTK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CT_LOTRINH" EntityType="Self.CT_LOTRINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GIAYCHUNGTHUC" EntityType="Self.GIAYCHUNGTHUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GIAYKHAISINH" EntityType="Self.GIAYKHAISINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOCBA" EntityType="Self.HOCBA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOCSINH" EntityType="Self.HOCSINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOPDONG" EntityType="Self.HOPDONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOSOHS" EntityType="Self.HOSOHS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KIHOC" EntityType="Self.KIHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOTRINH" EntityType="Self.LOTRINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NAMHOC" EntityType="Self.NAMHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGUOIGIAMHO" EntityType="Self.NGUOIGIAMHO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUANTRI" EntityType="Self.QUANTRI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUYEN" EntityType="Self.QUYEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CT_BCTK_BAOCAOTHONGKE" Association="Self.FK_CT_BCTK_BAOCAOTHONGKE">
+      <End Role="BAOCAOTHONGKE" EntitySet="BAOCAOTHONGKE" />
+      <End Role="CT_BCTK" EntitySet="CT_BCTK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_BCTK_HOPDONG" Association="Self.FK_CT_BCTK_HOPDONG">
+      <End Role="HOPDONG" EntitySet="HOPDONG" />
+      <End Role="CT_BCTK" EntitySet="CT_BCTK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_LOTRINH_HOSOHS" Association="Self.FK_CT_LOTRINH_HOSOHS">
+      <End Role="HOSOHS" EntitySet="HOSOHS" />
+      <End Role="CT_LOTRINH" EntitySet="CT_LOTRINH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_LOTRINH_LOTRINH" Association="Self.FK_CT_LOTRINH_LOTRINH">
+      <End Role="LOTRINH" EntitySet="LOTRINH" />
+      <End Role="CT_LOTRINH" EntitySet="CT_LOTRINH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GIAYCHUNGTHUC_HOSOHS" Association="Self.FK_GIAYCHUNGTHUC_HOSOHS">
+      <End Role="HOSOHS" EntitySet="HOSOHS" />
+      <End Role="GIAYCHUNGTHUC" EntitySet="GIAYCHUNGTHUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOCSINH_BANGTOTNGHIEP" Association="Self.FK_HOCSINH_BANGTOTNGHIEP">
+      <End Role="BANGTOTNGHIEP" EntitySet="BANGTOTNGHIEP" />
+      <End Role="HOCSINH" EntitySet="HOCSINH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOCSINH_CMT" Association="Self.FK_HOCSINH_CMT">
+      <End Role="CMT" EntitySet="CMT" />
+      <End Role="HOCSINH" EntitySet="HOCSINH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOCSINH_GIAYKHAISINH" Association="Self.FK_HOCSINH_GIAYKHAISINH">
+      <End Role="GIAYKHAISINH" EntitySet="GIAYKHAISINH" />
+      <End Role="HOCSINH" EntitySet="HOCSINH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOPDONG_HOSOHS" Association="Self.FK_HOPDONG_HOSOHS">
+      <End Role="HOSOHS" EntitySet="HOSOHS" />
+      <End Role="HOPDONG" EntitySet="HOPDONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOSOHS_HOCSINH" Association="Self.FK_HOSOHS_HOCSINH">
+      <End Role="HOCSINH" EntitySet="HOCSINH" />
+      <End Role="HOSOHS" EntitySet="HOSOHS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOSOHS_NGUOIGIAMHO" Association="Self.FK_HOSOHS_NGUOIGIAMHO">
+      <End Role="NGUOIGIAMHO" EntitySet="NGUOIGIAMHO" />
+      <End Role="HOSOHS" EntitySet="HOSOHS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KIHOC_NAMHOC" Association="Self.FK_KIHOC_NAMHOC">
+      <End Role="NAMHOC" EntitySet="NAMHOC" />
+      <End Role="KIHOC" EntitySet="KIHOC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NAMHOC_HOCBA" Association="Self.FK_NAMHOC_HOCBA">
+      <End Role="HOCBA" EntitySet="HOCBA" />
+      <End Role="NAMHOC" EntitySet="NAMHOC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHANVIEN_QUYEN" Association="Self.FK_NHANVIEN_QUYEN">
+      <End Role="QUYEN" EntitySet="QUYEN" />
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

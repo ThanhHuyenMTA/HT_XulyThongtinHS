@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "ThemBangtotnghiep";
+    Layout = "~/Views/Shares/_Layout.cshtml";
+}
+<h3>
+    <a href="@Url.Action("Index","Quanlyhocsinh")"> Come back </a>
+    <i class="fa fa-chevron-left"></i> Thêm thông tin bằng tốt nghiệp
+</h3>
+<hr />
+<form class="form-group" id="form_BTN">
+    <label for="HoTen">Họ tên</label>
+    <input type="text" name="HoTen" id="HoTen" value="@Session["hocsinh"]" class="form-control form-control-sm" />
+    <label for="NgaySinh">Ngày sinh</label>
+    <input type="date" name="NgaySinh" id="NgaySinh" class="form-control form-control-sm" />
+    <label for="NoiSinh">Nơi sinh</label>
+    <input type="text" name="NoiSinh" id="NoiSinh" class="form-control form-control-sm" />
+
+    <label for="GioiTinh">Giới tính</label> <label id="forDanToc" for="DanToc">Dân tộc</label>
+
+    <input type="text" name="GioiTinh" id="GioiTinh" class="form-control form-control-sm" />
+    <input type="text" name="DanToc" id="DanToc" class="form-control form-control-sm" />
+
+
+    <label for="KhoaThi">Khóa thi</label>
+    <input type="date" name="KhoaThi" id="KhoaThi" class="form-control form-control-sm" />
+    <label for="HoiDongThi">Hội đồng thi</label>
+    <input type="text" name="HoiDongThi" id="HoiDongThi" class="form-control form-control-sm" />
+     <label for="NgayLap">Ngày lập</label>
+    <input type="text" name="NgayLap" id="NgayLap" class="form-control form-control-sm" />
+    <label for="SoHieu">Số hiệu</label><label id="forSovaoSoCapBang" for="SovaoSoCapBang">Số vào số cấp Bằng</label>
+    <input type="text" name="SoHieu" id="SoHieu" class="form-control form-control-sm" />
+    
+    <input type="text" name="SovaoSoCapBang" id="SovaoSoCapBang" class="form-control form-control-sm" /><br />
+
+    <button type="submit" class="btn btn-sm btn-primary">Lưu thông tin</button>
+</form>

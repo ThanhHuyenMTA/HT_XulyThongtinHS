@@ -1,0 +1,323 @@
+﻿
+@{
+    ViewBag.Title = "ThemHocba";
+    Layout = "~/Views/Shares/_Layout.cshtml";
+}
+<link href="~/Content/css/bootstrap3.7.min.css" rel="stylesheet" />
+
+<h3>
+    <a href="@Url.Action("Index","Quanlyhocsinh")"> Come back </a>
+    <i class="fa fa-chevron-left"></i> Thêm thông tin học bạ
+</h3>
+<hr />
+
+<div class="container hocba">
+    <h4>Thông tin Học bạ </h4>
+    <form method="post" action="~/Views/Quanlyhocsinh/ThemHocba.cshtml" class="form-group" id="form_HB">
+        <div class="row">
+            <div class="col-lg-5">
+                <label for="HoTen">Họ tên</label><label id="forGioiTinh" for="GioiTinh">Giới tính</label>
+                <input type="text" name="HoTen" id="HoTen" value="@Session["hocsinh"]" class="form-control form-control-sm" />
+                <input type="text" name="GioiTinh" id="GioiTinh" class="form-control form-control-sm" />
+
+                <label for="NgaySinh">Ngày sinh</label><input type="date" name="NgaySinh" id="NgaySinh" class="form-control form-control-sm" />
+                <label for="NoiSinh">Nơi sinh</label><input type="text" name="NoiSinh" id="NoiSinh" class="form-control form-control-sm" />
+                <label for="NoiSongHienTai">Nơi sống hiện tại</label><input type="text" name="NoiSongHienTai" id="NoiSongHienTai" class="form-control form-control-sm" />              
+                <br /><button type="button" onclick="SaveHocba()" class="btn btn-sm btn-primary">lưu thông tin</button>
+            </div>
+            <div class="col-lg-5">
+                
+                <label for="HoTenBo">Họ tên bố</label><label id="forNgheNghiepBo" for="NgheNghiepBo">Nghề nghiệp bố</label>
+                <input type="text" name="HoTenBo" id="HoTenBo" class="form-control form-control-sm" />
+                <input type="text" name="NgheNghiepBo" id="NgheNghiepBo" class="form-control form-control-sm" />
+
+                <label for="HoTenMe">Họ tên mẹ</label><label id="forNgheNghiepMe" for="NgheNghiepMe">Nghề nghiệp mẹ</label>
+                <input type="text" name="HoTenMe" id="HoTenMe" class="form-control form-control-sm" />
+                <input type="text" name="NgheNghiepMe" id="NgheNghiepMe" class="form-control form-control-sm" />
+
+                <label for="NguoiGiamHo">Người giám hộ</label><label id="forNgheNghiepNGH" for="NgheNghiepNGH">Nghề nghiệp người giám hộ</label>
+                <input type="text" name="NguoiGiamHo" id="NguoiGiamHo" class="form-control form-control-sm" />
+                <input type="text" name="NgheNghiepNGH" id="NgheNghiepNGH" class="form-control form-control-sm" />
+                <label for="DanToc">Dân tộc</label><label id="forNgayLap" for="NgayLap">Ngày lập</label>
+                <input type="text" name="DanToc" id="DanToc" class="form-control form-control-sm" />
+               <input type="date" name="NgayLap" id="NgayLap" class="form-control form-control-sm" />
+            </div>
+           
+        </div>
+    </form>
+</div>
+<div class="container namhoc"  style="display:none;">
+    <h4>Thông tin năm đã học</h4>
+    <form class="form-group" id="form_NH" method="post">
+        <label id="forThoiGian" for="ThoiGian">Thời gian</label><label id="forTenLop" for="TenLop">Tên lớp</label><label id="forTenTruong" for="TenTruong">Tên trường</label>
+        <input type="text" name="ThoiGian" id="ThoiGian" class="form-control form-control-sm" />
+       <input type="text" name="TenLop" id="TenLop" class="form-control form-control-sm" />
+       <input type="text" name="TenTruong" id="TenTruong" class="form-control form-control-sm" /><br />
+        <button type="button" onclick="SaveNamhoc()" class="btn btn-sm btn-primary"> Lưu thông tin</button>
+    </form>
+    @* Hiện thị năm học tương ứng *@
+    <table class="table table-hover" id="table_namhoc" style="display:none;">
+        <thead>
+            <tr class="row">
+                <th class="col-lg-2">Năm học</th>
+                <th class="col-lg-3">Lớp</th>
+                <th class="col-lg-5">Tên trường(huyện,tỉnh)</th>
+                <th class="col-lg-3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @* Kiểm tra script phía dưới  *@
+        </tbody>
+    </table>
+</div>
+
+<div class="container" id="Diemhocki">
+    <h4>Thông tin điểm các kì học năm học ....</h4>
+    <div class="row nhapdiem">
+        <div class="col-lg-3">
+            <table class="table table-bordered" id="table_mon">
+                <thead>
+                    <tr class="success" style="height: 84px;" ><th style="font-size:17px;">Môn học/Hoạt động GD</th></tr> 
+                    <tr><th>Toán</th></tr>
+                    <tr><th>Vật lý</th></tr>
+                    <tr><th>Hóa học</th></tr>
+                    <tr><th>Sinh học</th></tr>
+                    <tr><th>Tinh học</th></tr>
+                    <tr><th>Ngữ văn</th></tr>
+                    <tr><th>Lịch sử</th></tr>
+                    <tr><th>Địa lý</th></tr>
+                    <tr><th>Ngoại ngữ</th></tr>
+                    <tr><th>Công nghệ</th></tr>
+                    <tr><th>GD,QP-AN</th></tr>
+                    <tr><th>Thể dục (Đạt,Không đạt)</th></tr>
+                    <tr><th>Tự chọn</th></tr>
+                    <tr><th>Giáo dục công dân</th></tr>
+                    <tr><th>Điểm trung bình</th></tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="col-lg-7">
+            <form method="post">
+                <table class="table table-bordered" id="table_mon">
+                    <thead>
+                        <tr class="success"><th colspan="3" style="font-size:17px;">Điểm trung bình các môn</th></tr>
+                        <tr class="success" style="font-size:17px;">
+                            <th>HKỳ I</th>
+                            <th>HKỳ II</th>
+                            <th>CN</th>
+                        </tr>
+
+                        <tr>
+                            <th><input name="ToanI" id="ToanI" type="text" /></th>
+                            <th><input name="ToanI" id="ToanII" type="text" /></th>
+                            <th><input name="ToanI" id="ToanCN" type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th><input name="LyI" id="LyI" type="text" /></th>
+                            <th><input name="LyII" id="LyII" type="text" /></th>
+                            <th><input name="LyCN" id="LyCN" type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th><input name="HoaI" id="HoaI" type="text" /></th>
+                            <th><input name="HoaII" id="HoaII" type="text" /></th>
+                            <th><input name="HoaCN" id="HoaCN" type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th><input name="SinhI" id="SinhI" type="text" /></th>
+                            <th><input name="SinhII" id="SinhII" type="text" /></th>
+                            <th><input name="SinhCN" id="SinhCN" type="text" /></th>
+
+                        </tr>
+                        <tr>
+                            <th><input name="TinI" id="TinI" type="text" /></th>
+                            <th><input name="TinII" id="TinII" type="text" /></th>
+                            <th><input name="TinCN" id="TinCN" type="text" /></th>
+
+                        </tr>
+                        <tr>
+                            <th><input name="VanI" id="VanI" type="text" /></th>
+                            <th><input name="VanII" id="VanII" type="text" /></th>
+                            <th><input name="VanCN" id="VanCN" type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th><input name="SuI" id="SuI" type="text" /></th>
+                            <th><input name="SuI" id="SuI" type="text" /></th>
+                            <th><input name="SuI" id="SuI" type="text" /></th>
+
+                        </tr>
+                        <tr>
+                            <th><input name="DiaI" id="DiaI" type="text" /></th>
+                            <th><input name="DiaII" id="DiaII" type="text" /></th>
+                            <th><input name="DiaCN" id="DiaCN" type="text" /></th>
+
+                        </tr>
+                        <tr>
+                            <th><input name="NgoaiNguI" id="NgoaiNguI" type="text" /></th>
+                            <th><input name="NgoaiNguII" id="NgoaiNguII" type="text" /></th>
+                            <th><input name="NgoaiNguCN" id="NgoaiNguCN" type="text" /></th>
+
+                        </tr>
+                        <tr>
+                            <th><input name="CongNgheI" id="CongNgheI" type="text" /></th>
+                            <th><input name="CongNgheII" id="CongNgheII" type="text" /></th>
+                            <th><input name="CongNgheCN" id="CongNgheCN" type="text" /></th>
+
+                        </tr>
+                        <tr>
+                            <th><input name="QuocPhongAnNinhI" id="QuocPhongAnNinhI" type="text" /></th>
+                            <th><input name="QuocPhongAnNinhII" id="QuocPhongAnNinhII" type="text" /></th>
+                            <th><input name="QuocPhongAnNinhCN" id="QuocPhongAnNinhCN" type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th><input name="TheDucI" id="TheDucI" type="text" /></th>
+                            <th><input name="TheDucII" id="TheDucII" type="text" /></th>
+                            <th><input name="TheDucCN" id="TheDucCN" type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th><input name="TuChonI" id="TuChonI" type="text" /></th>
+                            <th><input name="TuChonII" id="TuChonII" type="text" /></th>
+                            <th><input name="TuChonCN" id="TuChonCN" type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th><input name="GiaoDucCongDanI" id="GiaoDucCongDanI" type="text" /></th>
+                            <th><input name="GiaoDucCongDanII" id="GiaoDucCongDanII" type="text" /></th>
+                            <th><input name="GiaoDucCongDanCN" id="GiaoDucCongDanCN" type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th><input name="DiemTrungBinhI" id="DiemTrungBinhI" type="text" /></th>
+                            <th><input name="DiemTrungBinhII" id="DiemTrungBinhII" type="text" /></th>
+                            <th><input name="DiemTrungBinhCN" id="DiemTrungBinhCN" type="text" /></th>
+                        </tr>
+                        <tr>
+                            <th><button type="button" onclick="DiemKyI()">Lưu điểm kỳ I</button></th>
+                            <th><button type="button" onclick="DiemKyII()">Lưu điểm kỳ II</button></th>
+                            <th><button type="button" onclick="DiemKyCN()">Lưu điểm kỳ CN</button></th>
+                        </tr>
+
+                    </thead>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function SaveHocba()
+    {
+        $(".namhoc").css("display", "block");
+        $(".hocba").css("display", "none");
+    }
+    function SaveNamhoc()
+    {
+        var namhoc = {
+            ThoiGian: $('#ThoiGian').val(),
+            TenLop:$('#TenLop').val(),
+            TenTruong:$('#TenTruong').val()
+        };
+        //debugger;
+        $.ajax({
+            type: "POST",
+            url: "/Quanlyhocsinh/ThemNamhoc",
+            dataType: "json",
+            data: JSON.stringify(namhoc),
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                var row = '';
+                row += '<tr class="row">';
+                row += '<td class="col-lg-2">' + data.ThoiGian + '</td>';
+                row += '<td class="col-lg-3">' + data.TenLop + '</td>';
+                row += '<td class="col-lg-5">' + data.TenTruong + '</td>';
+                row += '<td class="col-lg-3"><a href="#" onclick="NhapDiem('+data.id_namhoc+')" >Nhập điểm</i></td>';
+                row += '</tr>';
+                $("#table_namhoc").css("display", "block");
+                $("tbody").append(row);
+            },
+            error: function (err) {
+                alert("Error: " + err.responseText);
+            }
+        });       
+    }
+
+    function Nhapdiem(id_namhoc)
+    {
+        $.ajax({
+            type: "GET",
+            url: "Quanlyhocsinh/ViewNhapDiem",
+            dataType: "json",
+            data: {id : id_namhoc},//dua ra id_namhoc
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $('#Diemhocki').css('display', 'block');
+            },
+            error: function (err) {
+                alert("Error: " + err.responseText);
+            }
+
+        });
+    }
+    function DiemKyI()
+    {
+        var diemkyI = {
+            TenKiHoc: 'Hkỳ I',
+            Toan: $('#ToanI').val(),
+            Ly: $('#LyI').val(),
+            Hoa: $('#HoaI').val(),
+            Sinh: $('#SinhI').val(),
+            Tin:$('#TinI').val(),
+            Van:$('#VanI').val(),
+            Su:$('#SuI').val(),
+            Dia:$('#DiaI').val(),
+            NgoaiNgu:$('#NgoaiNguI').val(),
+            CongNghe: $('#CongNgheI').val(),
+            QuocPhongAnNinh: $('#QuocPhongAnNinhI').val(),
+            TheDuc:$('#TheDucI').val(),
+            TuChon:$('#TuChonI').val(),
+            GiaoDucCongDan:$('#GiaoDucCongDanI').val(),
+            DiemTrungBinh:$('#DiemTrungBinhI').val()
+        }
+        
+    }
+    function DiemKyII() {
+        var diemkyII = {
+            TenKiHoc: 'Hkỳ II',
+            Toan: $('#ToanII').val(),
+            Ly: $('#LyII').val(),
+            Hoa: $('#HoaII').val(),
+            Sinh: $('#SinhII').val(),
+            Tin: $('#TinII').val(),
+            Van: $('#VanII').val(),
+            Su: $('#SuII').val(),
+            Dia: $('#DiaII').val(),
+            NgoaiNgu: $('#NgoaiNguII').val(),
+            CongNghe: $('#CongNgheII').val(),
+            QuocPhongAnNinh: $('#QuocPhongAnNinhII').val(),
+            TheDuc: $('#TheDucII').val(),
+            TuChon: $('#TuChonII').val(),
+            GiaoDucCongDan: $('#GiaoDucCongDanII').val(),
+            DiemTrungBinh: $('#DiemTrungBinhII').val()
+        }
+
+    }
+    function DiemKyI() {
+        var diemkyI = {
+            TenKiHoc: 'Hkỳ CN',
+            Toan: $('#ToanCN').val(),
+            Ly: $('#LyCN').val(),
+            Hoa: $('#HoaCN').val(),
+            Sinh: $('#SinhCN').val(),
+            Tin: $('#TinCN').val(),
+            Van: $('#VanCN').val(),
+            Su: $('#SuCN').val(),
+            Dia: $('#DiaCN').val(),
+            NgoaiNgu: $('#NgoaiNguCN').val(),
+            CongNghe: $('#CongNgheCN').val(),
+            QuocPhongAnNinh: $('#QuocPhongAnNinhCN').val(),
+            TheDuc: $('#TheDucCN').val(),
+            TuChon: $('#TuChonCN').val(),
+            GiaoDucCongDan: $('#GiaoDucCongDanCN').val(),
+            DiemTrungBinh: $('#DiemTrungBinhCN').val()
+        }
+
+    }
+</script>
