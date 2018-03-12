@@ -34,6 +34,5 @@ namespace WebDoAnTN.Models
         public string NoiCuTruBo { get; set; }
         public string NoiDangKy { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
-        public Nullable<int> Type { get; set; }
     }
 }

@@ -20,7 +20,8 @@ namespace WebDoAnTN.Models
         public string NoiSinh { get; set; }
         public string GioiTinh { get; set; }
         public string DanToc { get; set; }
-        public string KhoaThi { get; set; }
+        public Nullable<System.DateTime> KhoaThi { get; set; }
+        public string HoiDongThi { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
         public string SoHieu { get; set; }
         public string SovaoSoCapBang { get; set; }

@@ -1925,6 +1925,7 @@
     <Content Include="Views\Quanlyhocsinh\ThemBangtotnghiep.cshtml" />
     <Content Include="Views\Quanlyhocsinh\ThemHocba.cshtml" />
     <Content Include="Content\css\bootstrap3.7.min.css" />
+    <Content Include="Views\Quanlyhocsinh\ThemNguoigiamho.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

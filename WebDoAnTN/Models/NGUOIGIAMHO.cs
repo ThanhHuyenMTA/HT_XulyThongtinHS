@@ -23,5 +23,6 @@ namespace WebDoAnTN.Models
         public string NoiThuongTru { get; set; }
         public string NoiCap { get; set; }
         public Nullable<System.DateTime> NgayCap { get; set; }
+        public Nullable<int> id_HSinh { get; set; }
     }
 }

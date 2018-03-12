@@ -25,13 +25,11 @@ namespace WebDoAnTN.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BANGTOTNGHIEP> BANGTOTNGHIEPs { get; set; }
         public virtual DbSet<BAOCAOTHONGKE> BAOCAOTHONGKEs { get; set; }
         public virtual DbSet<CMT> CMTs { get; set; }
         public virtual DbSet<CT_BCTK> CT_BCTK { get; set; }
         public virtual DbSet<CT_LOTRINH> CT_LOTRINH { get; set; }
         public virtual DbSet<GIAYCHUNGTHUC> GIAYCHUNGTHUCs { get; set; }
-        public virtual DbSet<GIAYKHAISINH> GIAYKHAISINHs { get; set; }
         public virtual DbSet<HOCBA> HOCBAs { get; set; }
         public virtual DbSet<HOCSINH> HOCSINHs { get; set; }
         public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
@@ -43,5 +41,7 @@ namespace WebDoAnTN.Models
         public virtual DbSet<QUANTRI> QUANTRIs { get; set; }
         public virtual DbSet<QUYEN> QUYENs { get; set; }
         public virtual DbSet<LOTRINH> LOTRINHs { get; set; }
+        public virtual DbSet<GIAYKHAISINH> GIAYKHAISINHs { get; set; }
+        public virtual DbSet<BANGTOTNGHIEP> BANGTOTNGHIEPs { get; set; }
     }
 }

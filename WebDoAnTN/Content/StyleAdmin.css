@@ -166,3 +166,18 @@
    padding-left: 43%;
     width: 217px;
 }
+#form_NGH #NoiCap{
+    width:62%;
+}
+#form_NGH #forNgayCap{
+    margin-left:55%;
+}
+#form_NGH #NgayCap{
+    width:35%;
+    margin-top:-7.3%;
+    margin-left:65%;
+}
+#form_NGH #btn_NGH{
+    width:91.4%;
+    height:10%;
+}

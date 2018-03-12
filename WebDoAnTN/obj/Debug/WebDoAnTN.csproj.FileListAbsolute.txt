@@ -19,3 +19,25 @@ D:\a. ki 1 nam 5\Do an tot nghiep\BailamWeb\WebDoAnTN\WebDoAnTN\bin\EntityFramew
 D:\a. ki 1 nam 5\Do an tot nghiep\BailamWeb\WebDoAnTN\WebDoAnTN\bin\EntityFramework.SqlServer.dll
 D:\a. ki 1 nam 5\Do an tot nghiep\BailamWeb\WebDoAnTN\WebDoAnTN\bin\EntityFramework.xml
 D:\a. ki 1 nam 5\Do an tot nghiep\BailamWeb\WebDoAnTN\WebDoAnTN\bin\EntityFramework.SqlServer.xml
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\WebDoAnTN.dll.config
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\WebDoAnTN.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\WebDoAnTN.pdb
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\EntityFramework.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\EntityFramework.SqlServer.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Helpers.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Mvc.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Razor.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Webpages.Deployment.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Webpages.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Webpages.Razor.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\EntityFramework.xml
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\EntityFramework.SqlServer.xml
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Razor.xml
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Webpages.xml
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Webpages.Deployment.xml
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Webpages.Razor.xml
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Helpers.xml
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\bin\System.Web.Mvc.xml
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\obj\Debug\WebDoAnTN.dll
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\obj\Debug\WebDoAnTN.pdb
+D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\obj\Debug\WebDoAnTN.csprojResolveAssemblyReference.cache

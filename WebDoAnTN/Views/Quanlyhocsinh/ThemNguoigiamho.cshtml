@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "ThemNguoigiamho";
+    Layout = "~/Views/Shares/_Layout.cshtml";
+}
+
+<h3>
+    <a href="@Url.Action("Index","Quanlyhocsinh")"> Come back </a>
+    <i class="fa fa-chevron-left"></i> Thêm thông tin người giám hộ
+</h3><hr />
+<div class="container">
+    <form class="form-group" method="post" id="form_NGH">
+        <div class="row">
+            <div class="col-lg-5">
+                <label for="SoCMT">Số CMT</label>
+                <input type="text" name="SoCMT" id="SoCMT" class="form-control form-control-sm" />
+                <label for="HoTen">Họ tên</label>
+                <input type="text" name="HoTen" id="HoTen" class="form-control form-control-sm" /> 
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="NgaySinh">Ngày sinh</label>
+                        <input type="date" name="NgaySinh" id="NgaySinh" class="form-control form-control-sm" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="GioiTinh" id="forGioiTinh" style="margin-left:32%;">Giới tính</label><br />
+                        <div class="radio">
+                            <label style="margin-left:10%;"><input type="radio" name="GioiTinh" value="Nam" id="GioiTinh" />Nam</label>
+                            <label style="margin-left:25%;"><input type="radio" name="GioiTinh" value="Nữ" id="GioiTinh" />Nữ</label>
+
+                        </div>
+                       
+                    </div>
+                </div>              
+                
+            </div>
+            <div class="col-lg-1">
+               </div>
+            <div class="col-lg-5">
+                <label for="QueQuan">Quê quán</label>
+                <input type="text" name="QueQuan" id="QueQuan" class="form-control form-control-sm" />
+                <label for="NoiThuongTru">Nơi thường trú</label>
+                <input type="text" name="NoiThuongTru" id="NoiThuongTru" class="form-control form-control-sm" />
+                <label for="NoiCap">Nơi cấp</label><label id="forNgayCap" for="NgayCap">Ngày cấp</label>
+                <input type="text" name="NoiCap" id="NoiCap" class="form-control form-control-sm" />
+                <input type="date" name="NgayCap" id="NgayCap" class="form-control form-control-sm" />
+
+            </div>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-sm btn-primary" id="btn_NGH">Lưu thông tin</button>
+    </form>
+</div>

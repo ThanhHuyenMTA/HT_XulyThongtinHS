@@ -10,7 +10,8 @@
     <Property Name="NoiSinh" Type="nvarchar" MaxLength="50" />
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
     <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
-    <Property Name="KhoaThi" Type="nvarchar" MaxLength="50" />
+    <Property Name="KhoaThi" Type="datetime" />
+    <Property Name="HoiDongThi" Type="nvarchar" MaxLength="150" />
     <Property Name="NgayLap" Type="datetime" />
     <Property Name="SoHieu" Type="nvarchar" MaxLength="20" />
     <Property Name="SovaoSoCapBang" Type="nvarchar" MaxLength="20" />
@@ -101,7 +102,6 @@
     <Property Name="NoiCuTruBo" Type="nvarchar" MaxLength="200" />
     <Property Name="NoiDangKy" Type="nvarchar" MaxLength="50" />
     <Property Name="NgayLap" Type="datetime" />
-    <Property Name="Type" Type="int" />
   </EntityType>
   <EntityType Name="HOCBA">
     <Key>
@@ -213,6 +213,7 @@
     <Property Name="NoiThuongTru" Type="nvarchar" MaxLength="200" />
     <Property Name="NoiCap" Type="nvarchar" MaxLength="200" />
     <Property Name="NgayCap" Type="datetime" />
+    <Property Name="id_HSinh" Type="int" />
   </EntityType>
   <EntityType Name="NHANVIEN">
     <Key>

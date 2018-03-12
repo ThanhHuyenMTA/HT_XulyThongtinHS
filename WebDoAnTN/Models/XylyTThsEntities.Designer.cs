@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\a. ki 1 nam 5\Do an tot nghiep\BailamWeb\WebDoAnTN\WebDoAnTN\Models\XylyTThsEntities.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\A.DoAn\BailamWeb\WebDoAnTN\WebDoAnTN\Models\XylyTThsEntities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -87,6 +87,7 @@ namespace WebDoAnTN.Controllers
             return View(gks);
         }
         #endregion end Giay khai sinh
+
         #region Bằng tốt nghiệp
 
         [HttpGet]
@@ -111,6 +112,7 @@ namespace WebDoAnTN.Controllers
         }
 
         #endregion end Bằng tốt nghiệp
+
         #region Học bạ, năm học, kì học
         [HttpGet]
         public ActionResult ThemHocba()
@@ -123,13 +125,12 @@ namespace WebDoAnTN.Controllers
         {
             if(ModelState.IsValid)
             {
-               // db.HOCBAs.Add(hocba);
+                 db.HOCBAs.Add(hocba);
                 //Tự động add thêm thông tin hocba vào bảng HOCSINH
-
-                //int id_hs = (int)Session["id_hs"];
-                //HOCSINH hs = db.HOCSINHs.SingleOrDefault(n => n.id == id_hs);
-                //hs.id_HB = hocba.id;
-                //db.SaveChanges();
+                int id_hs = (int)Session["id_hs"];
+                HOCSINH hs = db.HOCSINHs.SingleOrDefault(n => n.id == id_hs);
+                hs.id_HB = hocba.id;
+                db.SaveChanges();
                 return RedirectToAction("Themnamhoc", "Quanlyhocsinh");
             }
             return View(hocba);
@@ -139,8 +140,8 @@ namespace WebDoAnTN.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.NAMHOCs.Add(namhoc);
-                //db.SaveChanges();
+                db.NAMHOCs.Add(namhoc);
+                db.SaveChanges();
                 return Json(namhoc, JsonRequestBehavior.AllowGet);
             }
             return Json(namhoc, JsonRequestBehavior.AllowGet);
@@ -157,13 +158,40 @@ namespace WebDoAnTN.Controllers
         {
             if(ModelState.IsValid)
             {
+                kihoc.id_NAMHOC =(int)Session["id_namhoc"];
+                db.KIHOCs.Add(kihoc);
+                db.SaveChanges();
                 return Json(kihoc, JsonRequestBehavior.AllowGet);
             }
             return Json(kihoc, JsonRequestBehavior.AllowGet);
         }
         #endregion End Học bạ
 
+        #region  Người giám hộ
+        [HttpGet]
+        public ActionResult ThemNguoigiamho()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ThemNguoigiamho(NGUOIGIAMHO ngh)
+        {
+            if(ModelState.IsValid)
+            {
+                ngh.id_HSinh = (int)Session["id_hs"];
+                db.NGUOIGIAMHOes.Add(ngh);
+                //Sau khi có thông tin học sinh và người giám hộ thì tự tạo hồ sơ HS
+                HOSOH hosoHS = new HOSOH();
+                hosoHS.id_HS = (int)Session["id_hs"];
+                hosoHS.SoCMT_NGH = ngh.SoCMT;
+                db.HOSOHS.Add(hosoHS);
+                db.SaveChanges();
 
+            }
+            return View(ngh);
+        }
+         
+        #endregion
 
     }
 }
