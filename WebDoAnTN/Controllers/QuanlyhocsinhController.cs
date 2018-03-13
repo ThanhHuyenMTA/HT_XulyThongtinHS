@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -25,12 +26,15 @@ namespace WebDoAnTN.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.HOCSINHs.Add(hocsinh);
-                db.SaveChanges();
-                Session["hocsinh"] = hocsinh.TenHS;
-                Session["id_hs"] = hocsinh.id;
-                return RedirectToAction("Index");
-
+                if(hocsinh.TenHS!=null)
+                {
+                    db.HOCSINHs.Add(hocsinh);
+                    db.SaveChanges();
+                    Session["hocsinh"] = hocsinh.TenHS;
+                    Session["id_hs"] = hocsinh.id;
+                    return RedirectToAction("Index");
+                }
+                return View(hocsinh);
             }
             return View(hocsinh);
         }
@@ -121,7 +125,7 @@ namespace WebDoAnTN.Controllers
 
         }
         [HttpPost]
-        public ActionResult ThemHocba(HOCBA hocba)
+        public JsonResult XulyHocba(HOCBA hocba)
         {
             if(ModelState.IsValid)
             {
@@ -131,9 +135,9 @@ namespace WebDoAnTN.Controllers
                 HOCSINH hs = db.HOCSINHs.SingleOrDefault(n => n.id == id_hs);
                 hs.id_HB = hocba.id;
                 db.SaveChanges();
-                return RedirectToAction("Themnamhoc", "Quanlyhocsinh");
+                return Json(hocba,JsonRequestBehavior.AllowGet);
             }
-            return View(hocba);
+            return  Json(hocba,JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
         public JsonResult ThemNamhoc(NAMHOC namhoc)
@@ -193,5 +197,27 @@ namespace WebDoAnTN.Controllers
          
         #endregion
 
+
+        #region Uplooad_Image
+        [HttpPost]
+        public JsonResult UploadImage()
+        {
+
+            if (System.Web.HttpContext.Current.Request.Files.AllKeys.Any())
+            {
+                var fileImg = Request.Files["HelpSectionImages"];
+                // xử lý
+                var NameImg = fileImg.FileName;
+                string pic = System.IO.Path.GetFileName(fileImg.FileName);
+                 string path = System.IO.Path.Combine(
+                                        Server.MapPath("~/img/profile"), pic);
+                // file is uploaded
+                 fileImg.SaveAs(path);
+                return Json(fileImg, JsonRequestBehavior.AllowGet);
+           
+            }
+            return Json("Khong", JsonRequestBehavior.AllowGet);
+        }
+        #endregion
     }
 }

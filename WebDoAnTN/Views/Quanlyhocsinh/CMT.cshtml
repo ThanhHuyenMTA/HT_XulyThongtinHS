@@ -14,15 +14,16 @@
     <div class="row">
         <div class="col-sm-4 ">
             <img src="~/Content/img/CMT_1.jpg"/><br />
-            <a href="#" id="1" onclick="LoaiCMT(1,@Session["hocsinh"])">Loại 1</a>
+             
+            <a href="#" id="1" onclick="LoaiCMT(1)">Loại 1</a>
         </div>
         <div class="col-sm-4">
             <img src="~/Content/img/CMT_2.jpg"/><br />
-            <a href="#" id="2" onclick="LoaiCMT(2,@Session["hocsinh"])">Loại 2</a>
+            <a href="#" id="2" onclick="LoaiCMT(2)">Loại 2</a>
         </div>
         <div class="col-sm-4">
             <img src="~/Content/img/CMT_3.jpg"/><br />
-            <a href="#" id="3" onclick="LoaiCMT(3,@Session["hocsinh"])">Loại 3</a>
+            <a href="#" id="3" onclick="LoaiCMT(3)">Loại 3</a>
         </div>
 
     </div>
@@ -32,8 +33,10 @@
     
 </div>
 <script type="text/javascript">
-    function LoaiCMT(type,tenhocsinh)
+    
+    function LoaiCMT(type)
     {
+        
         debugger;
         //alert(type);
         $.ajax({
@@ -52,7 +55,7 @@
                 row += '<input type="text" name="SoCMT" id="SoCMT" class="form-control form-control-sm" />';
 
                 row += '<label for="HoTen">Họ tên</label>';
-                row += '<input type="text" name="HoTen" id="HoTen" class="form-control form-control-sm" value ='+tenhocsinh+'/>';
+                row += '<input type="text" name="HoTen" id="HoTen" class="form-control form-control-sm"/>';
                 if (type == 2 || type == 3) {
                     row += '<label for="TenGoiKhac">Tên gọi khác</label>';
                     row += '<input type="text" name="TenGoiKhac" id="TenGoiKhac" class="form-control form-control-sm" />';
@@ -102,7 +105,6 @@
                 row += '</div>';
                 row += '  </div>';
                 row += '  </div>';
-
                 row += '<input type="button" onclick="SaveCMT('+type+')" value="Lưu thông tin" class="btn btn-sm btn-primary" />';
                 row += '</form>';
                 $('.loadCMT').html(row);
@@ -145,7 +147,7 @@
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 console.log(data);
-                $(".formCmt").css("display", "none");
+                $("#fm_cmt").css("display", "none");
             },
             error: function (err) {
                 alert("Error: " + err.responseText);

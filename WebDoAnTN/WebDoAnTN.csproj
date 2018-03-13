@@ -198,6 +198,7 @@
     <Content Include="Content\img\CMT_3.jpg" />
     <Content Include="Content\img\huyen1.jpg" />
     <Content Include="Content\img\huyen2.jpg" />
+    <Content Include="Content\img\logo_nguoi.png" />
     <Content Include="Content\Ionicons\cheatsheet.html" />
     <Content Include="Content\Ionicons\css\ionicons.css" />
     <Content Include="Content\Ionicons\css\ionicons.min.css" />
@@ -1935,6 +1936,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\profile\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

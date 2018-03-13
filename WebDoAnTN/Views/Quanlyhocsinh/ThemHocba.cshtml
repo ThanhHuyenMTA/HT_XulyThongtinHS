@@ -10,7 +10,6 @@
     <i class="fa fa-chevron-left"></i> Thêm thông tin học bạ
 </h3>
 <hr />
-
 <div class="container hocba">
     <h4>Thông tin Học bạ </h4>
     <form method="post" action="~/Views/Quanlyhocsinh/ThemHocba.cshtml" class="form-group" id="form_HB">
@@ -19,12 +18,10 @@
                 <label for="HoTen">Họ tên</label><label id="forGioiTinh" for="GioiTinh">Giới tính</label>
                 <input type="text" name="HoTen" id="HoTen" value="@Session["hocsinh"]" class="form-control form-control-sm" />
                 <input type="text" name="GioiTinh" id="GioiTinh" class="form-control form-control-sm" />
-
                 <label for="NgaySinh">Ngày sinh</label><input type="date" name="NgaySinh" id="NgaySinh" class="form-control form-control-sm" />
                 <label for="NoiSinh">Nơi sinh</label><input type="text" name="NoiSinh" id="NoiSinh" class="form-control form-control-sm" />
                 <label for="NoiSongHienTai">Nơi sống hiện tại</label><input type="text" name="NoiSongHienTai" id="NoiSongHienTai" class="form-control form-control-sm" />              
-                <br /><button type="button" onclick="SaveHocba()" class="btn btn-sm btn-primary">lưu thông tin</button>
-            </div>
+                </div>
             <div class="col-lg-5">
                 
                 <label for="HoTenBo">Họ tên bố</label><label id="forNgheNghiepBo" for="NgheNghiepBo">Nghề nghiệp bố</label>
@@ -44,8 +41,12 @@
             </div>
            
         </div>
+        <div class="row">
+           <br /><button type="button" onclick="SaveHocba()" class="btn btn-sm btn-primary" style="width: 80.7%; margin-left: 1.4%;">lưu thông tin</button>
+        </div>
     </form>
 </div>
+
 <div class="container namhoc"  style="display:none;">
     <h4>Thông tin năm đã học</h4>
     <form class="form-group" id="form_NH" method="post">
@@ -205,8 +206,39 @@
 <script type="text/javascript">
     function SaveHocba()
     {
-        $(".namhoc").css("display", "block");
-        $(".hocba").css("display", "none");
+        debugger;
+        var hocba = {
+            HoTen: $('#HoTen').val(),
+            NgaySinh: $('#NgaySinh').val(),
+            NoiSinh: $('#NoiSinh').val(),
+            GioiTinh: $('#GioiTinh').val(),
+            DanToc: $('#DanToc').val(),
+            NoiSongHienTai: $('#NoiSongHienTai').val(),
+            HoTenBo: $('#HoTenBo').val(),
+            NgheNghiepBo: $('#NgheNghiepBo').val(),
+            HoTenMe: $('#HoTenMe').val(),
+            NgheNghiepMe: $('#NgheNghiepMe').val(),
+            NguoiGiamHo: $('#NguoiGiamHo').val(),
+            NgheNghiepNGH: $('#NgheNghiepNGH').val(),
+            NgayLap: $('#NgayLap').val(),
+        };
+        $.ajax({
+            type: "POST",
+            url: "/Quanlyhocsinh/XulyHocba",
+            dataType: "json",
+            data: JSON.stringify(hocba),
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data);
+                $(".namhoc").css("display", "block");
+                $(".hocba").css("display", "none");
+            },
+            error: function (err) {
+                alert("Error: " + err.responseText);
+            }
+        });
+
+
     }
     function SaveNamhoc()
     {
@@ -228,7 +260,7 @@
                 row += '<td class="col-lg-2">' + data.ThoiGian + '</td>';
                 row += '<td class="col-lg-3">' + data.TenLop + '</td>';
                 row += '<td class="col-lg-5">' + data.TenTruong + '</td>';
-                row += '<td class="col-lg-3"><a href="#" onclick="NhapDiem('+data.id_namhoc+')" >Nhập điểm</i></td>';
+                row += '<td class="col-lg-3"><a href="#" onclick="NhapDiem('+data.id+')" >Nhập điểm</i></td>';
                 row += '</tr>';
                 $("#table_namhoc").css("display", "block");
                 $("tbody").append(row);

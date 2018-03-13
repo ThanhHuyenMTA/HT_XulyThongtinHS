@@ -6,16 +6,80 @@
 
 <h2>Nhập thông tin học sinh</h2>
 <hr />
-<form method="post" class="form-group">
-    <label for="tenHS">Tên học sinh</label>
-    <input type="text" name="tenHS" id="tenHS" class="form-control form-control-sm" />
-    <label for="sdt">Số ĐT</label>
-    <input type="text" name="sdt" id="sdt" class="form-control form-control-sm" />
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" class="form-control form-control-sm" /><br />
-    <input type="submit" value="Lưu thông tin" class="btn btn-sm btn-primary" />
-</form>
+
+    <div class="row">
+        <form method="post" enctype="multipart/form-data" >
+            <div class="col-lg-3">
+                @* Chú ý *@
+                <img src="~/Content/img/logo_nguoi.png" style="width:230px;height:200px;" />
+                <button id="btn_uploadanh" type="button" onclick="$('#anh').click()" class="btn btn-sm btn-primary" style="width:100%;">Thay đổi ảnh</button>
+                <input type="file" id="anh" name="anh" style="display: none;" class="form-control">
+            </div>
+        </form>
+
+        <form method="post" class="form-group">
+            <div class="col-lg-9">
+                <label for="tenHS">Tên học sinh</label>
+                <input type="text" name="tenHS" id="tenHS" class="form-control form-control-sm" />
+                <label for="sdt">Số ĐT</label>
+                <input type="text" name="sdt" id="sdt" class="form-control form-control-sm" />
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control form-control-sm" /><br />
+                <input type="submit" value="Lưu thông tin" class="btn btn-sm btn-primary" style="width:100%;" />
+            </div>
+        </form>
+</div>
+
+<div class="container">
+
+</div>
+<script src="~/Content/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("#anh").change(function () {
+                debugger;
+                var data = new FormData();
+                var files = $("#anh").get(0).files;
+                if (files.length > 0) {
+                    data.append("HelpSectionImages", files[0]);
+                }
+                $.ajax({
+                    url: "/Quanlyhocsinh/UpLoadImage",
+                    type: "POST",
+                    processData: false,
+                    contentType: false,
+                    data: data,
+                    success: function (response) {
+                        //code xử lý dữ liệu trả về của bạn
+                    },
+                    error: function (er) {
+                        alert(er);
+                    }
+
+                });
+            });
+        });
 
 
+    //$("#anh").change(function(){
+    //    var data = new FormData();
+    //    var files = $("#anh").get(0).files;
+    //    if (files.length > 0) {
+    //        data.append("HelpSectionImages", files[0]);
+    //    }
+    //    $.ajax({
+    //        url: resolveUrl("/Quanlyhocsinh/UploadImage"),
+    //        type: "POST",
+    //        processData: false,
+    //        contentType: false,
+    //        data: data,
+    //        success: function (response) {
+    //            //code xử lý dữ liệu trả về của bạn
+    //        },
+    //        error: function (er) {
+    //            alert(er);
+    //        }
 
-
+    //    });
+    //});
+</script>

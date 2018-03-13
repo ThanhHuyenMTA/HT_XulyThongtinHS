@@ -8,7 +8,7 @@
     <i class="fa fa-chevron-left"></i> Thêm thông tin giấy khai sinh
 </h3>
 <hr />
-<form class="form-group" id="form_GKS">
+<form class="form-group" id="form_GKS" method="post">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -28,14 +28,14 @@
                 <label for="NoiDangKy">Nơi đăng ký</label>
                 <input type="text" name="NoiDangKy" id="NoiDangKy" class="form-control form-control-sm" />
                 <label for="NgapLap">Ngày lập</label>
-                <input type="date" name="NgapLap" id="NgapLap" class="form-control form-control-sm" />
+                <input type="date" name="NgayLap" id="NgapLap" class="form-control form-control-sm" />
 
             </div>
             <div class="col-lg-6">
                 <label for="HoTenMe">Họ tên mẹ</label>
                 <input type="text" name="HoTenMe" id="HoTenMe" placeholder="Nhập tên mẹ " class="form-control form-control-sm" />
-                <label for="NsMe">Ngày sinh mẹ</label>
-                <input type="date" name="NsMe" id="NsMe"class="form-control form-control-sm" />
+                <label for="NsMe">Năm sinh mẹ</label>
+                <input type="text" name="NsMe" id="NsMe"class="form-control form-control-sm" />
                 <label for="DanTocMe">Dân tộc mẹ</label><label id="forQuocTichMe" for="QuocTichMe">Quốc tịch mẹ</label>
                 <input type="text" name="DanTocMe" id="DanTocMe" class="form-control form-control-sm" />              
                 <input type="text" name="QuocTichMe" id="QuocTichMe" class="form-control form-control-sm" />
@@ -43,8 +43,8 @@
                 <input type="text" name="NoiCuTruMe" id="NoiCuTruMe" class="form-control form-control-sm" />
                 <label for="HoTenBo">Họ tên bố</label>
                 <input type="text" name="HoTenBo" id="HoTenBo" placeholder="Nhập tên bố " class="form-control form-control-sm" />
-                <label for="NsBo">Ngày sinh bố</label>
-                <input type="date" name="NsBo" id="NsBo" class="form-control form-control-sm" />
+                <label for="NsBo">Năm sinh bố</label>
+                <input type="text" name="NsBo" id="NsBo" class="form-control form-control-sm" />
                 <label for="DanTocBo">Dân tộc bố</label><label id="forQuocTichBo" for="QuocTichBo">Quốc tịch bố</label>
                 <input type="text" name="DanTocBo" id="DanTocBo" class="form-control form-control-sm" />
                 
@@ -54,6 +54,6 @@
 
             </div>
         </div>
-    </div>
-    <button type="submit" class="btn btn-sm btn-primary">Lưu thông tin</button>
+    </div><br />
+    <button type="submit" id="btn_gks" class="btn btn-sm btn-primary">Lưu thông tin</button>
 </form>
