@@ -7,6 +7,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="~/Content/bootstrap/dist/css/bootstrap.min.css">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="~/Content/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -19,7 +20,7 @@
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     @* thêm style css *@
     <link href="~/Content/StyleAdmin.css" rel="stylesheet" />
-
+   
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -207,9 +208,9 @@
                     </div>
                 </div>
                 <!-- search form (Optional) -->
-                <form action="#" method="get" class="sidebar-form">
+                <form action="@Url.Action("Search", "Quanlyhocsinh")" method="post" class="sidebar-form">
                     <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <input type="text" name="searchname" class="form-control" placeholder="Search...">
                         <span class="input-group-btn">
                             <button type="submit" name="search" id="search-btn" class="btn btn-flat">
                                 <i class="fa fa-search"></i>
@@ -232,9 +233,22 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="@Url.Action("ThemHocsinh","Quanlyhocsinh")"><i class="fa fa-plus"></i> <span>Thêm học sinh</span> </a></li>
-                            <li><a href="#"><i class="fa fa-server"></i> <span>Danh sách học sinh</span> </a></li>
+                            <li><a href="@Url.Action("DanhsachHS","Quanlyhocsinh")"><i class="fa fa-server"></i> <span>Danh sách học sinh</span> </a></li>
                             <li><a href="#"><i class="fa fa-trello"></i> <span>Danh sách học sinh sai <br />thông tin</span> </a></li>
                         </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-link"></i> <span>Quản lý hợp đồng</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-plus"></i> <span>Thêm hợp đồng</span> </a></li>
+                            <li><a href="#"><i class="fa fa-server"></i> <span>Danh sách hợp đồng</span> </a></li>
+                            </ul>
                     </li>
 
                     <li class="treeview">
@@ -249,8 +263,6 @@
                             <li><a href="#">Thống kê</a></li>
                         </ul>
                     </li>
-
-
 
 
 

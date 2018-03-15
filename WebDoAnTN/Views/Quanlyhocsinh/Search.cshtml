@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebDoAnTN.Models.HOCSINH>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shares/_Layout.cshtml";
+}
+<h4>Danh sách học sinh</h4><hr />
+    
+    <table class="table table-bordered" id="table_dshs">
+        <thead>
+            <tr class="success">
+                <th>Image</th>
+                <th>Họ tên</th>
+                <th>SĐT</th>
+                <th>Email</th>
+                <th>CMT</th>
+                <th>Giấy khai sinh</th>
+                <th>Bằng tốt nghiệp</th>
+                <th>Thông tin khác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src="~/Content/img/profile/@item.anh" style="height:150px;width:150px;" /></td>
+                    <td><br /><br /><br /> @item.TenHS</td>
+                    <td><br /><br /><br /> @item.sdt</td>
+                    <td>
+                        <br /><br /> @item.email <br />
+                        <a href="#">Gửi mail</a>
+                    
+                    </td>
+                    <td><br /><br /><br /><a href="#">CMT</a></td>
+                    <td><br /><br /><br /><a href="#">GKS</a></td>
+                    <td><br /><br /><br /><a href="#">BTN</a></td>
+                    <td><br /><br /><br /><a href="#">Khác</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+
+

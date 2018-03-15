@@ -199,6 +199,12 @@
     <Content Include="Content\img\huyen1.jpg" />
     <Content Include="Content\img\huyen2.jpg" />
     <Content Include="Content\img\logo_nguoi.png" />
+    <Content Include="Content\img\profile\hang.jpg" />
+    <Content Include="Content\img\profile\Hung.jpg" />
+    <Content Include="Content\img\profile\huyen.jpg" />
+    <Content Include="Content\img\profile\lien.jpg" />
+    <Content Include="Content\img\profile\tuan.jpg" />
+    <Content Include="Content\img\profile\tung.jpg" />
     <Content Include="Content\Ionicons\cheatsheet.html" />
     <Content Include="Content\Ionicons\css\ionicons.css" />
     <Content Include="Content\Ionicons\css\ionicons.min.css" />
@@ -1667,6 +1673,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuanlyhocsinhController.cs" />
+    <Compile Include="Controllers\XulyhocsinhController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1927,6 +1934,10 @@
     <Content Include="Views\Quanlyhocsinh\ThemHocba.cshtml" />
     <Content Include="Content\css\bootstrap3.7.min.css" />
     <Content Include="Views\Quanlyhocsinh\ThemNguoigiamho.cshtml" />
+    <Content Include="Views\Quanlyhocsinh\DanhsachHS.cshtml" />
+    <Content Include="Views\Quanlyhocsinh\Search.cshtml" />
+    <Content Include="Views\Xulyhocsinh\ChitietCMT.cshtml" />
+    <Content Include="Views\Xulyhocsinh\Danhsachloi.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1936,7 +1947,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\img\profile\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

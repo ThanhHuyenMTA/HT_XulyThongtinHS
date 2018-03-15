@@ -16,6 +16,7 @@ namespace WebDoAnTN.Controllers
         {
             return View();
         }
+        #region Thêm học sinh 
         [HttpGet]
         public ActionResult ThemHocsinh()
         {
@@ -38,7 +39,10 @@ namespace WebDoAnTN.Controllers
             }
             return View(hocsinh);
         }
-        #region //Chứng minh thư
+
+        #endregion
+
+        #region Chứng minh thư
         [HttpGet]
         public ActionResult CMT()
         {
@@ -145,7 +149,7 @@ namespace WebDoAnTN.Controllers
             if (ModelState.IsValid)
             {
                 db.NAMHOCs.Add(namhoc);
-                db.SaveChanges();
+               db.SaveChanges();
                 return Json(namhoc, JsonRequestBehavior.AllowGet);
             }
             return Json(namhoc, JsonRequestBehavior.AllowGet);
@@ -198,7 +202,7 @@ namespace WebDoAnTN.Controllers
         #endregion
 
 
-        #region Uplooad_Image
+        #region Uplooad_Image ... cần sửa lỗi
         [HttpPost]
         public JsonResult UploadImage()
         {
@@ -209,14 +213,38 @@ namespace WebDoAnTN.Controllers
                 // xử lý
                 var NameImg = fileImg.FileName;
                 string pic = System.IO.Path.GetFileName(fileImg.FileName);
-                 string path = System.IO.Path.Combine(
-                                        Server.MapPath("~/img/profile"), pic);
+               // string path = System.IO.Path.Combine(
+                //                        Server.MapPath("../Content/img/profile"), pic);
+                string path = Path.Combine(Server.MapPath("~/Content/img/profile/"), pic);
                 // file is uploaded
-                 fileImg.SaveAs(path);
-                return Json(fileImg, JsonRequestBehavior.AllowGet);
+                var type = fileImg.ContentType;
+                if (type == "image/jpeg" || type == "image/jpg" || type == "image/png")
+                {
+                    fileImg.SaveAs(path);
+                }
+                 
+                return Json(NameImg, JsonRequestBehavior.AllowGet);
            
             }
             return Json("Khong", JsonRequestBehavior.AllowGet);
+        }
+        #endregion
+
+
+        #region Danh sách học sinh
+        public ActionResult DanhsachHS()
+        {
+            return View(db.HOCSINHs.ToList());
+        }
+        #endregion
+
+        #region Search - học sinh
+        [HttpPost]
+        public ActionResult Search(string searchname)
+        {
+            List<HOCSINH> list_hs = new List<HOCSINH>();
+            list_hs = db.HOCSINHs.Where(n => n.TenHS == searchname).ToList();
+            return View(list_hs);
         }
         #endregion
     }

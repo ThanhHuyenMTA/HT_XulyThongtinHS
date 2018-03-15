@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebDoAnTN.Models.HOCSINH>
+
+@{
+    ViewBag.Title = "DanhsachHS";
+    Layout = "~/Views/Shares/_Layout.cshtml";
+}
+
+<h2>Danh sách học sinh</h2>
+<hr />
+<table class="table table-bordered" id="table_dshs" >
+  <thead>
+      <tr class="success">
+          <th>Image</th>
+          <th>Họ tên</th>
+          <th>SĐT</th>
+          <th>Email</th>
+          <th>CMT</th>
+          <th>Giấy khai sinh</th>
+          <th>Bằng tốt nghiệp</th>
+          <th>Thông tin khác</th>
+      </tr>
+  </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="~/Content/img/profile/@item.anh" style="height:150px;width:150px;" /></td>
+                <td><br /><br /><br /> @item.TenHS</td>
+                <td><br /><br /><br /> @item.sdt</td>
+                <td>
+                    <br /><br /> @item.email <br />
+                    <a href="#">Gửi mail</a>
+                </td>
+                <td><br /><br /><br /><a href="@Url.Action("ChitietCMT", "Xulyhocsinh", new {@id_hs =item.id })">CMT</a></td>
+                <td><br /><br /><br /><a href="@Url.Action("ChitietGKS", "Xulyhocsinh", new { @id_hs = item.id })">GKS</a></td>
+                <td><br /><br /><br /><a href="@Url.Action("ChitietBTN", "Xulyhocsinh", new { @id_hs = item.id })">BTN</a></td>
+                <td><br /><br /><br /><a href="@Url.Action("Khac", "Xulyhocsinh", new { @id_hs = item.id })">Khác</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>

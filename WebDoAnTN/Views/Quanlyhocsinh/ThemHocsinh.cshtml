@@ -34,6 +34,7 @@
 
 </div>
 <script src="~/Content/jquery/dist/jquery.min.js"></script>
+
 <script type="text/javascript">
         $(document).ready(function () {
             $("#anh").change(function () {
@@ -49,8 +50,10 @@
                     processData: false,
                     contentType: false,
                     data: data,
-                    success: function (response) {
-                        //code xử lý dữ liệu trả về của bạn
+                    success: function (data) {
+                        
+                           console.log(data);
+                        
                     },
                     error: function (er) {
                         alert(er);
@@ -59,27 +62,4 @@
                 });
             });
         });
-
-
-    //$("#anh").change(function(){
-    //    var data = new FormData();
-    //    var files = $("#anh").get(0).files;
-    //    if (files.length > 0) {
-    //        data.append("HelpSectionImages", files[0]);
-    //    }
-    //    $.ajax({
-    //        url: resolveUrl("/Quanlyhocsinh/UploadImage"),
-    //        type: "POST",
-    //        processData: false,
-    //        contentType: false,
-    //        data: data,
-    //        success: function (response) {
-    //            //code xử lý dữ liệu trả về của bạn
-    //        },
-    //        error: function (er) {
-    //            alert(er);
-    //        }
-
-    //    });
-    //});
 </script>

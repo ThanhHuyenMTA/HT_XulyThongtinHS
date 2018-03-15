@@ -1,0 +1,12 @@
+﻿@model WebDoAnTN.Models.CMT
+
+@{
+    ViewBag.Title = "ChitietCMT";
+    Layout = "~/Views/Shares/_Layout.cshtml";
+}
+<h4>Thông tin chi tiết CMT - @Session["cthocsinh"] </h4><hr />
+
+<form class="form-group">
+    <input type="text" name ="SoCMT" value=@Model.SoCMT  class="form-control form-group-sm" />
+
+</form>

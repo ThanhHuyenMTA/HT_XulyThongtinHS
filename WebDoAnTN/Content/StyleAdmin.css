@@ -186,3 +186,24 @@
     width:100%;
     margin-left:1.5%;
 }
+
+
+#table_dshs thead th{
+    text-align:center;
+}
+#table_dshs tbody td{
+    text-align:center;
+}
+#table_dshs tbody td a:hover {
+    color: red;
+}
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>th, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #d2c8c8;
+}
+
+#table_dshs a{
+    font-weight:bold;
+}
+ .table{
+        border: 1px solid #d2c8c8;
+    }
