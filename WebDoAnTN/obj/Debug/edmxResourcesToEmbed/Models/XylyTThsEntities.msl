@@ -263,5 +263,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TABLE_LOI">
+      <EntityTypeMapping TypeName="dbXulyTThsModel.TABLE_LOI">
+        <MappingFragment StoreEntitySet="TABLE_LOI">
+          <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+          <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="TyPe" ColumnName="TyPe" />
+          <ScalarProperty Name="id_HB" ColumnName="id_HB" />
+          <ScalarProperty Name="id_GKS" ColumnName="id_GKS" />
+          <ScalarProperty Name="id_BTN" ColumnName="id_BTN" />
+          <ScalarProperty Name="id_CMT" ColumnName="id_CMT" />
+          <ScalarProperty Name="id_HS" ColumnName="id_HS" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

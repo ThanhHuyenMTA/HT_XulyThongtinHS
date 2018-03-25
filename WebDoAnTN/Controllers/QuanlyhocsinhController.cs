@@ -11,6 +11,7 @@ namespace WebDoAnTN.Controllers
     public class QuanlyhocsinhController : Controller
     {
        dbXulyTThsEntities  db = new dbXulyTThsEntities();
+       Xuly xulyLoi = new Xuly();
         // GET: Quanlyhocsinh
         public ActionResult Index()
         {
@@ -51,7 +52,6 @@ namespace WebDoAnTN.Controllers
         public JsonResult LoadFormCMT()
         {
             return Json("", JsonRequestBehavior.AllowGet);
-
         }
         [HttpPost]
         public JsonResult themCMT(CMT cmt)
@@ -63,10 +63,12 @@ namespace WebDoAnTN.Controllers
                 //Tự động add thêm thông tin cmt vào bảng HOCSINH
                 HOCSINH hs = db.HOCSINHs.SingleOrDefault(n => n.id == id_hs);
                 hs.SoCMT = cmt.SoCMT;
-
                 db.SaveChanges();
+                if(xulyLoi.CheckString(hs.TenHS,cmt.HoTen)==false){
+                    Session["Loi"] = "Họ tên giữa Học sinh và chứng minh thư có sự khác nhau";
+                }
+                else { Session["Loi"] = "Đúng"; }
                 return Json(cmt, JsonRequestBehavior.AllowGet);
-
             }
             return Json(cmt, JsonRequestBehavior.AllowGet);
 
@@ -84,12 +86,19 @@ namespace WebDoAnTN.Controllers
         {
             if(ModelState.IsValid)
             {
-                db.GIAYKHAISINHs.Add(gks);
+                db.GIAYKHAISINHs.Add(gks);               
+                db.SaveChanges();
                 //Tự động add thêm thông tin GKS vào bảng HOCSINH
                 int id_hs = (int)Session["id_hs"];
-                HOCSINH hs = db.HOCSINHs.SingleOrDefault(n => n.id == id_hs);
-                hs.id_GKS = gks.id;
+                HOCSINH hs = db.HOCSINHs.SingleOrDefault(n => n.id == id_hs);  
+                //dua ra giay khai sinh vua them vào (nam ơ vi tri cuoi cung)
+                GIAYKHAISINH newG = db.GIAYKHAISINHs.ToList().Last();
+                hs.id_GKS = newG.id;
+                //Lưu lại dữ liệu bảng Học Sinh
+                db.Entry(hs).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
+
+               
                 return RedirectToAction("Index");
             }
             return View(gks);
@@ -109,10 +118,15 @@ namespace WebDoAnTN.Controllers
             if(ModelState.IsValid)
             {
                 db.BANGTOTNGHIEPs.Add(bangTN);
+                db.SaveChanges();
                 //Tự động add thêm thông tin bangtotnghiep vào bảng HOCSINH
                 int id_hs = (int)Session["id_hs"];
-                HOCSINH hs = db.HOCSINHs.SingleOrDefault(n => n.id == id_hs);
-                hs.id_BTN = bangTN.id;
+                HOCSINH hs = db.HOCSINHs.SingleOrDefault(n => n.id == id_hs);                
+                //dua ra giay khai sinh vua them vào (nam ơ vi tri cuoi cung)
+                BANGTOTNGHIEP newB = db.BANGTOTNGHIEPs.ToList().Last();
+                hs.id_BTN = newB.id;
+                //Lưu lại dữ liệu bảng Học Sinh
+                db.Entry(hs).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -134,10 +148,14 @@ namespace WebDoAnTN.Controllers
             if(ModelState.IsValid)
             {
                  db.HOCBAs.Add(hocba);
+                 db.SaveChanges();
                 //Tự động add thêm thông tin hocba vào bảng HOCSINH
                 int id_hs = (int)Session["id_hs"];
                 HOCSINH hs = db.HOCSINHs.SingleOrDefault(n => n.id == id_hs);
-                hs.id_HB = hocba.id;
+                HOCBA NewH = db.HOCBAs.ToList().Last();
+                hs.id_HB = NewH.id;
+                //Lưu lại dữ liệu bảng Học Sinh
+                db.Entry(hs).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return Json(hocba,JsonRequestBehavior.AllowGet);
             }
@@ -206,24 +224,30 @@ namespace WebDoAnTN.Controllers
         [HttpPost]
         public JsonResult UploadImage()
         {
-
             if (System.Web.HttpContext.Current.Request.Files.AllKeys.Any())
-            {
+            {             
                 var fileImg = Request.Files["HelpSectionImages"];
-                // xử lý
-                var NameImg = fileImg.FileName;
-                string pic = System.IO.Path.GetFileName(fileImg.FileName);
-               // string path = System.IO.Path.Combine(
-                //                        Server.MapPath("../Content/img/profile"), pic);
-                string path = Path.Combine(Server.MapPath("~/Content/img/profile/"), pic);
+            
+                //lưu tên file
+                var fileName = Path.GetFileName(fileImg.FileName);
+                //lưu đường dẫn
+                var path = Path.Combine(Server.MapPath("~/Content/img/profile"), fileName);
                 // file is uploaded
                 var type = fileImg.ContentType;
-                if (type == "image/jpeg" || type == "image/jpg" || type == "image/png")
+                if (System.IO.File.Exists(path))
                 {
-                    fileImg.SaveAs(path);
+                    ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                }else{
+                    if (type == "image/jpeg" || type == "image/jpg" || type == "image/png")
+                        fileImg.SaveAs(path);                  
                 }
-                 
-                return Json(NameImg, JsonRequestBehavior.AllowGet);
+                //dua ra hoc sinh can upload anh
+                HOCSINH hs = db.HOCSINHs.ToList().Last();
+                hs.anh = fileName;
+                db.Entry(hs).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                //end
+                return Json(fileName, JsonRequestBehavior.AllowGet);
            
             }
             return Json("Khong", JsonRequestBehavior.AllowGet);
@@ -233,7 +257,7 @@ namespace WebDoAnTN.Controllers
 
         #region Danh sách học sinh
         public ActionResult DanhsachHS()
-        {
+        {           
             return View(db.HOCSINHs.ToList());
         }
         #endregion
@@ -247,5 +271,7 @@ namespace WebDoAnTN.Controllers
             return View(list_hs);
         }
         #endregion
+
+      
     }
 }

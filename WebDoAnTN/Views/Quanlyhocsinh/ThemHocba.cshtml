@@ -260,7 +260,7 @@
                 row += '<td class="col-lg-2">' + data.ThoiGian + '</td>';
                 row += '<td class="col-lg-3">' + data.TenLop + '</td>';
                 row += '<td class="col-lg-5">' + data.TenTruong + '</td>';
-                row += '<td class="col-lg-3"><a href="#" onclick="NhapDiem('+data.id+')" >Nhập điểm</i></td>';
+                row += '<td class="col-lg-3"><a href="#" onclick="NhapDiem(' + data.id + ')" >Nhập điểm</i></td>';
                 row += '</tr>';
                 $("#table_namhoc").css("display", "block");
                 $("tbody").append(row);
@@ -270,7 +270,7 @@
             }
         });       
     }
-
+    //sử dụng nhâp điểm bình thường
     function NhapDiem(id_namhoc)
     {
         $.ajax({

@@ -1673,6 +1673,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuanlyhocsinhController.cs" />
+    <Compile Include="Controllers\Xuly.cs" />
     <Compile Include="Controllers\XulyhocsinhController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1729,6 +1730,9 @@
       <DependentUpon>XylyTThsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QUYEN.cs">
+      <DependentUpon>XylyTThsEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TABLE_LOI.cs">
       <DependentUpon>XylyTThsEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\XylyTThsEntities.Context.cs">

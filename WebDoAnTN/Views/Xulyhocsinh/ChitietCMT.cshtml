@@ -4,9 +4,71 @@
     ViewBag.Title = "ChitietCMT";
     Layout = "~/Views/Shares/_Layout.cshtml";
 }
-<h4>Thông tin chi tiết CMT - @Session["cthocsinh"] </h4><hr />
+<h4>Thông tin chi tiết CMT ----- @Session["cthocsinh"] </h4><hr />
+<div class="container">
+    <form class="form-group">
+        <div class="row">
+            <div class="col-lg-5">
+                <label for="SoCMT">Số CMT</label>
+                <input type="text" name="SoCMT" value=@Model.SoCMT class="form-control form-group-sm" />
+                <label for="HoTen">Họ tên</label>
+                <input type="text" name="HoTen" id="HoTen" value="@Model.HoTen" class="form-control form-control-sm" />
+                @if (@Model.Type == 2 || @Model.Type == 3)
+                {
+                    <label for="TenGoiKhac">Tên gọi khác</label>
+                    <input type="text" name="TenGoiKhac" id="TenGoiKhac" value="@Model.TenGoiKhac" class="form-control form-control-sm" />
+                }
+                <label for="NgaySinh">Ngày sinh</label>
+                <input type="date" name="NgaySinh" id="NgaySinh" value=@Model.NgaySinh.Value.ToString("yyyy-MM-dd") class="form-control form-control-sm" />
+                <label for="QueQuan">Quê quán</label>
+                <input type="text" name="QueQuan" id="QueQuan" value="@Model.QueQuan" class="form-control form-control-sm" />
+                <label for="NoiThuongTru">Nơi thường trú</label>
+                <input type="text" name="NoiThuongTru" id="NoiThuongTru" value="@Model.NoiThuongTru" class="form-control form-control-sm" />
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                @if (@Model.Type == 1)
+                {
+                    <label for="TonGiao">Tôn Giáo</label>
+                    <input type="text" name="TonGiao" id="TonGiao" value="@Model.TonGiao" class="form-control form-control-sm" />
+                    <label id="forDanToc" for="DanToc">Dân tộc</label>
+                    <input type="text" name="DanToc" id="DanToc" value="@Model.DanToc" class="form-control form-control-sm" />
 
-<form class="form-group">
-    <input type="text" name ="SoCMT" value=@Model.SoCMT  class="form-control form-group-sm" />
+                }
+                @if (@Model.Type == 2)
+                {
+                    <input checked="checked" id="Nam" name="GioiTinh" type="radio" value="Nam" /><span>Nam</span>
+                    <input checked="checked" id="Nu" name="GioiTinh" type="radio" value="Nữ" /><span>Nam</span> <br /><br /><br />
+                    <label for="GioiTinh">Giới tính</label><label id="forDanToc" for="DanToc">Dân tộc</label>
+                    <input type="text" name="GioiTinh" id="GioiTinh" value="@Model.GioiTinh" class="form-control form-control-sm" />
+                    <input type="text" name="DanToc" id="DanToc" value="@Model.DanToc" class="form-control form-control-sm" />
+                }
+                @if (@Model.Type == 3)
+                {
+                    <label for="GioiTinh">Giới tính</label>
+                    <input type="text" name="GioiTinh" id="GioiTinh" value="@Model.GioiTinh" class="form-control form-control-sm" />
+                    <label id="forQuocTich" for="QuocTich">Quốc tịch</label>
+                    <input type="text" name="QuocTich" id="QuocTich" value="@Model.QuocTich" class="form-control form-control-sm" />
+                }
+                @if (@Model.Type == 2 || @Model.Type == 3)
+                {
+                    <label for="GiaTriDen">Giá trị đến</label>
+                    <input type="date" name="GiaTriDen" value=@Model.GiaTriDen.Value.ToString("yyyy-MM-dd") id="GiaTriDen" class="form-control form-control-sm" />
+                }
 
-</form>
+
+                <label for="DauVetRieng">Dấu vết riêng</label>
+                <input type="text" name="DauVetRieng" id="DauVetRieng" value="@Model.DauVetRieng" class="form-control form-control-sm" />
+                <label for="NgayCap">Ngày cấp</label>
+                <input type="date" name="NgayCap" value="@Model.NgayCap.Value.ToString("yyyy-MM-dd")" id="NgayCap" class="form-control form-control-sm" />
+                <label for="NoiCap">Nơi cấp</label>
+                <input type="text" name="NoiCap" id="NoiCap" value="@Model.NoiCap" class="form-control form-control-sm" />
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-12">              
+                <button type="submit" class="btn btn-primary btn-block" style="width:91.5%;">Sửa thông tin</button>
+            </div>
+        </div>
+    </form>
+</div>

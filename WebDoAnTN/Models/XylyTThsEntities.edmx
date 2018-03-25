@@ -251,6 +251,21 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenQuyen" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="TABLE_LOI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_HS" Type="int" />
+          <Property Name="id_CMT" Type="varchar" MaxLength="20" />
+          <Property Name="id_BTN" Type="int" />
+          <Property Name="id_GKS" Type="int" />
+          <Property Name="id_HB" Type="int" />
+          <Property Name="TyPe" Type="nvarchar" MaxLength="150" />
+          <Property Name="TrangThai" Type="int" />
+          <Property Name="TimeStart" Type="datetime" />
+          <Property Name="TimeEnd" Type="datetime" />
+        </EntityType>
         <EntityContainer Name="dbXulyTThsModelStoreContainer">
           <EntitySet Name="BANGTOTNGHIEP" EntityType="Self.BANGTOTNGHIEP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BAOCAOTHONGKE" EntityType="Self.BAOCAOTHONGKE" Schema="dbo" store:Type="Tables" />
@@ -270,6 +285,7 @@
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QUANTRI" EntityType="Self.QUANTRI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QUYEN" EntityType="Self.QUYEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TABLE_LOI" EntityType="Self.TABLE_LOI" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -489,6 +505,7 @@
           <EntitySet Name="LOTRINHs" EntityType="dbXulyTThsModel.LOTRINH" />
           <EntitySet Name="GIAYKHAISINHs" EntityType="dbXulyTThsModel.GIAYKHAISINH" />
           <EntitySet Name="BANGTOTNGHIEPs" EntityType="dbXulyTThsModel.BANGTOTNGHIEP" />
+          <EntitySet Name="TABLE_LOI" EntityType="dbXulyTThsModel.TABLE_LOI" />
         </EntityContainer>
         <EntityType Name="LOTRINH">
           <Key>
@@ -540,6 +557,21 @@
           <Property Name="NgayLap" Type="DateTime" Precision="3" />
           <Property Name="SoHieu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="SovaoSoCapBang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TABLE_LOI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_HS" Type="Int32" />
+          <Property Name="id_CMT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="id_BTN" Type="Int32" />
+          <Property Name="id_GKS" Type="Int32" />
+          <Property Name="id_HB" Type="Int32" />
+          <Property Name="TyPe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="Int32" />
+          <Property Name="TimeStart" Type="DateTime" Precision="3" />
+          <Property Name="TimeEnd" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -805,6 +837,22 @@
                 <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
                 <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TABLE_LOI">
+            <EntityTypeMapping TypeName="dbXulyTThsModel.TABLE_LOI">
+              <MappingFragment StoreEntitySet="TABLE_LOI">
+                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+                <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="TyPe" ColumnName="TyPe" />
+                <ScalarProperty Name="id_HB" ColumnName="id_HB" />
+                <ScalarProperty Name="id_GKS" ColumnName="id_GKS" />
+                <ScalarProperty Name="id_BTN" ColumnName="id_BTN" />
+                <ScalarProperty Name="id_CMT" ColumnName="id_CMT" />
+                <ScalarProperty Name="id_HS" ColumnName="id_HS" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

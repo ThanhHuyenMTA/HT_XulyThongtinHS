@@ -43,5 +43,6 @@ namespace WebDoAnTN.Models
         public virtual DbSet<LOTRINH> LOTRINHs { get; set; }
         public virtual DbSet<GIAYKHAISINH> GIAYKHAISINHs { get; set; }
         public virtual DbSet<BANGTOTNGHIEP> BANGTOTNGHIEPs { get; set; }
+        public virtual DbSet<TABLE_LOI> TABLE_LOI { get; set; }
     }
 }

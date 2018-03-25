@@ -246,6 +246,21 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenQuyen" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="TABLE_LOI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_HS" Type="int" />
+    <Property Name="id_CMT" Type="varchar" MaxLength="20" />
+    <Property Name="id_BTN" Type="int" />
+    <Property Name="id_GKS" Type="int" />
+    <Property Name="id_HB" Type="int" />
+    <Property Name="TyPe" Type="nvarchar" MaxLength="150" />
+    <Property Name="TrangThai" Type="int" />
+    <Property Name="TimeStart" Type="datetime" />
+    <Property Name="TimeEnd" Type="datetime" />
+  </EntityType>
   <EntityContainer Name="dbXulyTThsModelStoreContainer">
     <EntitySet Name="BANGTOTNGHIEP" EntityType="Self.BANGTOTNGHIEP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BAOCAOTHONGKE" EntityType="Self.BAOCAOTHONGKE" Schema="dbo" store:Type="Tables" />
@@ -265,5 +280,6 @@
     <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QUANTRI" EntityType="Self.QUANTRI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QUYEN" EntityType="Self.QUYEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_LOI" EntityType="Self.TABLE_LOI" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

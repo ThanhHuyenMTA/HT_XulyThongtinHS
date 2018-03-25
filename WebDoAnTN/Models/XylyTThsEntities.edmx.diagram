@@ -23,6 +23,7 @@
         <EntityTypeShape EntityType="dbXulyTThsModel.LOTRINH" Width="1.5" PointX="5.375" PointY="9.75" />
         <EntityTypeShape EntityType="dbXulyTThsModel.GIAYKHAISINH" Width="1.5" PointX="0.75" PointY="12.75" />
         <EntityTypeShape EntityType="dbXulyTThsModel.BANGTOTNGHIEP" Width="1.5" PointX="3.375" PointY="12.75" />
+        <EntityTypeShape EntityType="dbXulyTThsModel.TABLE_LOI" Width="1.5" PointX="5.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

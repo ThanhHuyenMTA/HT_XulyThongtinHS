@@ -214,6 +214,7 @@
     <EntitySet Name="LOTRINHs" EntityType="dbXulyTThsModel.LOTRINH" />
     <EntitySet Name="GIAYKHAISINHs" EntityType="dbXulyTThsModel.GIAYKHAISINH" />
     <EntitySet Name="BANGTOTNGHIEPs" EntityType="dbXulyTThsModel.BANGTOTNGHIEP" />
+    <EntitySet Name="TABLE_LOI" EntityType="dbXulyTThsModel.TABLE_LOI" />
   </EntityContainer>
   <EntityType Name="LOTRINH">
     <Key>
@@ -265,5 +266,20 @@
     <Property Name="NgayLap" Type="DateTime" Precision="3" />
     <Property Name="SoHieu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="SovaoSoCapBang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TABLE_LOI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id_HS" Type="Int32" />
+    <Property Name="id_CMT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="id_BTN" Type="Int32" />
+    <Property Name="id_GKS" Type="Int32" />
+    <Property Name="id_HB" Type="Int32" />
+    <Property Name="TyPe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Int32" />
+    <Property Name="TimeStart" Type="DateTime" Precision="3" />
+    <Property Name="TimeEnd" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>
